@@ -11,6 +11,8 @@ const Hero = () => {
       className="min-h-screen flex items-center pt-20 pb-16 bg-gradient-to-r from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a]"
     >
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+        
+        {/* LEFT CONTENT */}
         <div className="md:w-1/2 mb-10 md:mb-0">
           
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
@@ -18,7 +20,7 @@ const Hero = () => {
           </h1>
 
           <h2 className="text-2xl md:text-4xl font-semibold mb-6 typewriter">
-            Full Stack Developer 
+            Full Stack Developer
           </h2>
 
           <p className="text-lg text-gray-300 mb-8">
@@ -28,7 +30,26 @@ const Hero = () => {
             improving problem-solving skills, and exploring new technologies to grow as a developer.
           </p>
 
+          {/* BUTTONS */}
+          <div className="flex space-x-4">
+            <a 
+              href="#project" 
+              className="px-6 py-3 bg-purple rounded-lg font-medium hover:bg-purple/80 transition duration-300"
+            >
+              View Work
+            </a>
+
+            <a 
+              href="#contact" 
+              className="px-6 py-3 border border-purple rounded-lg font-medium hover:bg-purple/20 transition duration-300"
+            >
+              Contact Me
+            </a>
+          </div>
+
         </div>
+
+        {/* END LEFT CONTENT */}
       </div>
     </motion.div>
   );
