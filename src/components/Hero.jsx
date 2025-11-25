@@ -9,10 +9,10 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center pt-20 pb-16 bg-gradient-to-r from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a]"
     >
-      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <div className="container mx-auto px-8 flex flex-col md:flex-row items-center justify-between">
         
         {/* LEFT CONTENT */}
-        <div className="md:w-1/2 mb-10 md:mb-0">
+        <div className="md:w-7/12 mb-10 md:mb-0">
           
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             Hi, I'm <span className="text-purple">Vishal Dubey</span>
@@ -50,10 +50,8 @@ const Hero = () => {
 
         {/* END LEFT CONTENT */}
         
-      </div>
-
       {/*right side image */}
-      <div className="md:w-1/2 flex justify-center">
+      <div className="md:w-5/12 flex justify-center">
         <div className="relative w-64 h-64 md:w-80 md:h-80">
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple to-pink opacity-70">
             <motion.img
@@ -70,6 +68,7 @@ const Hero = () => {
             />
           </div>
         </div>
+      </div>
       </div>
     </motion.div>
   );
