@@ -44,6 +44,14 @@ const Hero = () => {
             >
               Contact Me
             </a>
+
+            <a 
+              href="/New_resume_vishal.pdf" 
+              download="Vishal_Dubey_Resume.pdf"
+              className="px-6 py-3 border border-purple rounded-lg font-medium hover:bg-purple/20 transition duration-300"
+            >
+              Download Resume
+            </a>
           </div>
 
         </div>
