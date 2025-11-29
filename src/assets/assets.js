@@ -1,12 +1,11 @@
-import { FaLightbulb, FaPaintBrush, FaCode, FaReact, FaServer, FaMobileAlt, FaTools, FaNodeJs, FaStripe, FaVuejs, FaFire, FaDatabase, FaCloud, FaRobot } from 'react-icons/fa';
+import { FaLightbulb, FaBug, FaCode, FaReact, FaServer, FaMobileAlt, FaTools, FaNodeJs, FaStripe, FaVuejs, FaFire, FaDatabase, FaCloud, FaRobot } from 'react-icons/fa';
 
 import profileImg from '../assets/profile.avif';
-import projectImg1 from '../assets/project1.avif';
-import projectImg2 from '../assets/project2.avif';
-import projectImg3 from '../assets/project3.avif';
-import projectImg4 from '../assets/project4.avif';
-import projectImg5 from '../assets/project5.avif';
-import projectImg6 from '../assets/project6.avif';
+import SmartExpense from '../assets/SmartExpense.png';
+import netflix from '../assets/new_netflix.png';
+import portfolio from '../assets/portfolio.png';
+import new_food from '../assets/new_food.jpg';
+
 
 
 export const assets = {
@@ -22,9 +21,9 @@ export const aboutInfo = [
       color: 'text-purple'
     },
     {
-      icon: FaPaintBrush,
-      title: 'Design Oriented',
-      description: 'Beautiful design and user experience are at the heart of everything I create.',
+      icon: FaBug,
+      title: 'Debugging & Optimization',
+      description: 'Skilled in debugging and optimizing code to improve performance, reliability, and overall application efficiency.',
       color: 'text-pink'
     },
     {
@@ -42,37 +41,32 @@ export const skills = [
     title: 'Frontend Development',
     icon: FaReact,
     description: 'Building responsive and interactive user interfaces with modern frameworks.',
-    tags: ['React', 'Vue.js', 'Angular', 'TypeScript']
+    tags: ['React',"Javascript", 'TypeScript' , "Redux"]
   },
   {
     title: 'Backend Development',
     icon: FaServer,
     description: 'Creating robust server-side applications and RESTful APIs.',
-    tags: ['Node.js', 'Express', 'Django', 'Laravel']
+    tags: ['Node.js', 'Express' , "Restfull API's"]
   },
   {
     title: 'Database Management',
     icon: FaDatabase,
     description: 'Designing and optimizing databases for performance and scalability.',
-    tags: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase']
+    tags: ['MongoDB', 'MySQL', 'Firebase']
   },
-  {
-    title: 'Mobile Development',
-    icon: FaMobileAlt,
-    description: 'Building cross-platform mobile applications with modern tools.',
-    tags: ['React Native', 'Flutter', 'Ionic', 'Swift']
-  },
+  
   {
     title: 'Cloud & DevOps',
     icon: FaCloud,
     description: 'Deploying and managing applications in cloud environments.',
-    tags: ['AWS', 'Docker', 'Kubernetes', 'CI/CD']
+    tags: ['AWS', 'Docker', 'Kubernetes']
   },
   {
     title: 'Tools & Technologies',
     icon: FaTools,
     description: 'Essential tools and technologies I use in my development workflow.',
-    tags: ['Git & GitHub', 'Webpack', 'Figma', 'Jest']
+    tags: ['Git & GitHub',  'Postman', 'VS-Code' , "Co-pilot"]
   }
 ];
 
@@ -80,57 +74,39 @@ export const skills = [
 
 export const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured online store with shopping cart, user authentication, and payment processing.",
-    image: projectImg1,
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
+    title: "SmartExpense",
+    description: "Built a secure MERN-based Expense Tracker with AI-powered insights using LangChain, RAG, and Gemini, supported by robust authentication and a responsive UI.",
+    image: SmartExpense,
+    tech: ["React", "Node.js", "MongoDB", "Langchain.js" , "Gemini-API"],
     icons: [FaReact, FaNodeJs, FaDatabase , FaStripe],
     demo: "#",
     code: "#",
   },
   {
-    title: "Task Management App",
-    description: "A productivity application with drag-and-drop functionality and real-time updates.",
-    image: projectImg2,
-    tech: ["Vue.js", "Firebase", "Tailwind CSS", "WebSockets"],
-    icons: [FaVuejs, FaFire, FaCloud , FaDatabase],
-    demo: "#",
+    title: "Netflix",
+    description: "Built a responsive Netflix-style platform using React and Redux with optimized search, efficient routing, and smooth real-time content updates for a seamless cross-device streaming experience.",
+    image: netflix,
+    tech: ["React", "Firebase", "Tailwind CSS", "Redux"],
+    icons: [FaReact, FaFire, FaCloud , FaDatabase],
     code: "#",
   },
   {
-    title: "Fitness Tracker",
-    description: "A mobile app for tracking workouts, nutrition, and health metrics.",
-    image: projectImg3,
-    tech: ["React Native", "GraphQL", "MySQL", "Chart.js"],
+    title: "Portfolio - Website",
+    description: "Built a responsive portfolio website using React and Tailwind CSS, featuring clean UI components, smooth navigation, and optimized performance across devices.",
+    image: portfolio,
+    tech: ["React", "Tailwind CSS", "JavaScript" , "Mobile-Responsive"],
     icons: [FaReact, FaDatabase],
-    demo: "#",
+
     code: "#",
   },
+  
+  
   {
-    title: "Portfolio Website",
-    description: "A personal portfolio to showcase projects, skills, and blogs with dark/light mode support.",
-    image: projectImg4,
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Markdown"],
-    icons: [FaReact, FaCloud],
-    demo: "#",
-    code: "#",
-  },
-  {
-    title: "Chat App",
-    description: "A real-time chat application with group messaging, emojis, and file sharing.",
-    image: projectImg5,
-    tech: ["Socket.IO", "React", "Node.js", "MongoDB"],
-    icons: [FaReact, FaNodeJs, FaDatabase ],
-    demo: "#",
-    code: "#",
-  },
-  {
-    title: "AI Image Generator",
-    description: "Generate images using AI prompts powered by OpenAI's DALL·E model and Cloudinary.",
-    image: projectImg6,
-    tech: ["React", "OpenAI API", "Cloudinary", "Tailwind CSS"],
+    title: "Food-Ordering Website",
+    description: "Built a responsive food ordering website using React, Tailwind CSS, and JavaScript, featuring a clean UI, smooth navigation, dynamic menu rendering, and an intuitive ordering experience across devices.",
+    image: new_food,
+    tech: ["React", "JavaScript", "Tailwind CSS"],
     icons: [FaRobot, FaReact, FaCloud],
-    demo: "#",
     code: "#",
   }
 ];

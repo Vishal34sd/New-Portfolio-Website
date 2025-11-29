@@ -4,52 +4,71 @@ import { FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaTwitter, FaMapMarkerAlt } 
 
 const Contact = ()=>{
     return(
-        <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        viewport={{ once: false , amount : 0.2 }}
+        <div
         id = "contact"
         className = "py-20 bg-dark-100 ">
             <div className="container mx-auto px-6">
-                <h2 className ="text-3xl font-bold text-center mb-4">
-                    Get In
-                    <span className ="text-purple">Touch</span>
-                </h2>
-                <p className ="text-gray-400 text-center max-w-2xl mx-auto mb-16">
+                <motion.h2 
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className ="text-3xl font-bold text-center mb-4"
+                >
+                    Get In <span className ="text-purple">Touch</span>
+                </motion.h2>
+                <motion.p 
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className ="text-gray-400 text-center max-w-2xl mx-auto mb-16"
+                >
                     Have a project in mind or want to collabrate ? Let's talk 
-                </p>
+                </motion.p>
 
                 <div className ="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
                     {/*Contact form */}
-                    <div>
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                    >
                         <form className ="space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-gray-300 mb-2">Your Name</label>
                                 <input
-                                className ="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none" type="text"></input>
+                                className ="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none focus:border-purple transition duration-300" type="text"></input>
                             </div>
 
                             <div>
                                 <label htmlFor="email" className="block text-gray-300 mb-2">Email</label>
                                 <input
-                                className ="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none" type="text"></input>
+                                className ="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none focus:border-purple transition duration-300" type="text"></input>
                             </div>
 
                             <div>
                                 <label htmlFor="message" className="block text-gray-300 mb-2">Your Message</label>
                                 <textarea
-                                className ="w-full h-40 bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none" type="text"></textarea>
+                                className ="w-full h-40 bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none focus:border-purple transition duration-300" type="text"></textarea>
                             </div>
-                            <button type ="submit" className ="w-full px-6 py-3
-                            bg-purple rounded-lg font-medium hover:bg-purple-700
-                            transition duration cursor pointer">Send</button>
+                            <motion.button 
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                type ="submit" 
+                                className ="w-full px-6 py-3 bg-purple rounded-lg font-medium hover:bg-purple-700 transition duration cursor pointer"
+                            >
+                                Send
+                            </motion.button>
                             
                         </form>
-                    </div>
+                    </motion.div>
 
                      {/*Contact info */}
-                     <div className ="space-y-8">
+                     <motion.div 
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className ="space-y-8"
+                    >
                         <div className ="flex items-start">
                             <div className ="text-purple text-2xl mr-4">
                                 <FaMapMarkerAlt/>
@@ -94,13 +113,13 @@ const Contact = ()=>{
                                 </a>
                             </div>
                         </div>
-                     </div>
+                     </motion.div>
 
 
                 </div>
 
             </div>
-        </motion.div>
+        </div>
     )
 }
 
