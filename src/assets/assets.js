@@ -1,7 +1,7 @@
 import { FaLightbulb, FaBug, FaCode, FaReact, FaServer, FaMobileAlt, FaTools, FaNodeJs, FaStripe, FaVuejs, FaFire, FaDatabase, FaCloud, FaRobot } from 'react-icons/fa';
 
 import profileImg from '../assets/profile.avif';
-import SmartExpense from '../assets/SmartExpense.png';
+import SmartExpense from '../assets/Expense.png';
 import netflix from '../assets/new_netflix.png';
 import portfolio from '../assets/portfolio.png';
 import new_food from '../assets/new_food.jpg';
