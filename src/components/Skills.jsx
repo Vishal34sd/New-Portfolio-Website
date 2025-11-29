@@ -3,25 +3,39 @@ import {skills} from "../assets/assets.js"
 
 const Skills = ()=>{
     return(
-        <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        viewport={{ once: false , amount : 0.2 }}
+        <div
         id = "skills"
         className = "py-20 bg-dark-100 "
         >
             <div className = "container mx-auto px-6">
-                <h2 className = "text-3xl font-bold text-center mb-4">My 
-                    <span className = "text-purple">Skills</span>
-                </h2>
-                <p className = "text-gray-400 text-center max-w-2xl mx-auto mb-16">Technologies I  work with to bring ideas to Life </p>
+                <motion.h2 
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className = "text-3xl font-bold text-center mb-4"
+                >
+                    My <span className = "text-purple">Skills</span>
+                </motion.h2>
+                <motion.p 
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className = "text-gray-400 text-center max-w-2xl mx-auto mb-16"
+                >
+                    Technologies I  work with to bring ideas to Life 
+                </motion.p>
 
                 <div className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     {
                         skills.map((skill, index)=>(
-                            <div key = {index} className ="bg-dark-300 rounded-2xl p-6 hover:-translate-y-2
-                             transition duration-300 cursor-pointer">
+                            <motion.div 
+                                key = {index} 
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                whileHover={{ scale: 1.05 }}
+                                className ="bg-dark-300 rounded-2xl p-6 transition duration-300 cursor-pointer"
+                            >
                                 <div className = "flex items-center mb-4">
                                    <skill.icon className = "w-12 h-12 text-purple mr-6"/>
                                    <h3 className = "text-xl font-semibold">{skill.title}</h3> 
@@ -32,13 +46,13 @@ const Skills = ()=>{
                                     <span key={tech} className ="px-3 py-1 bg-dark-400 rounded-full text-sm">{tech}</span>
                                    ))} 
                                 </div>
-                            </div>
+                            </motion.div>
                         ))
                     }
 
                 </div>
             </div>
-        </motion.div>
+        </div>
     )
 }
 
