@@ -6,7 +6,7 @@ const Navbar = () => {
 
     const [showMenu , setShowMenu] = useState(false);
     return (
-        <nav className="fixed w-full z-50 bg-dark-100/90 backdrop-blur-sm py-4 px-8 shadow-lg">
+        <nav className="fixed w-full z-50 bg-dark-100/60 backdrop-blur-sm py-4 px-8 shadow-lg">
             <div className="mx-auto flex justify-between items-center">
                 <div>
                     <a href="#" className="text-3xl font-bold text-white">
