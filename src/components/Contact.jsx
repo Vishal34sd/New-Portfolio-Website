@@ -75,7 +75,7 @@ const Contact = ()=>{
                             </div>
                             <div>
                                 <h3 className ="text-lg font-semibold mb-2">Location</h3>
-                                <p className="text-gray-400">New Delhi, India</p>
+                                <p className="text-gray-400">Ghaziabad, India</p>
                             </div>
                         </div>
 
@@ -85,7 +85,7 @@ const Contact = ()=>{
                             </div>
                             <div>
                                 <h3 className ="text-lg font-semibold mb-2">Email</h3>
-                                <p className="text-gray-400">vishaldubey@example.com</p>
+                                <p className="text-gray-400">dubeyvishal714@gmail.com</p>
                             </div>
                         </div>
 
@@ -95,20 +95,20 @@ const Contact = ()=>{
                             </div>
                             <div>
                                 <h3 className ="text-lg font-semibold mb-2">Phone</h3>
-                                <p className="text-gray-400">+91 98765 43210</p>
+                                <p className="text-gray-400">+91 9044160248</p>
                             </div>
                         </div>
 
                         <div className="pt-4">
                             <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
                             <div className="flex space-x-6">
-                                <a href="#" className="text-gray-400 hover:text-purple transition duration-300 text-2xl">
+                                <a href="https://github.com/Vishal34sd" className="text-gray-400 hover:text-purple transition duration-300 text-2xl">
                                     <FaGithub />
                                 </a>
-                                <a href="#" className="text-gray-400 hover:text-purple transition duration-300 text-2xl">
+                                <a href="https://www.linkedin.com/in/vishal-dubey-478541320/" className="text-gray-400 hover:text-purple transition duration-300 text-2xl">
                                     <FaLinkedin />
                                 </a>
-                                <a href="#" className="text-gray-400 hover:text-purple transition duration-300 text-2xl">
+                                <a href="https://x.com/@VishalDube39123" className="text-gray-400 hover:text-purple transition duration-300 text-2xl">
                                     <FaTwitter />
                                 </a>
                             </div>
