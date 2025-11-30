@@ -47,7 +47,7 @@ export const skills = [
     title: 'Backend Development',
     icon: FaServer,
     description: 'Creating robust server-side applications and RESTful APIs.',
-    tags: ['Node.js', 'Express' , "Restfull API's"]
+    tags: ['Node.js', 'Express' , "Restful API's"]
   },
   {
     title: 'Database Management',
