@@ -2,7 +2,6 @@ import { useState } from 'react'
 import './App.css'
 import Home from "./pages/Home.jsx"
 import Navbar from "./components/Navbar.jsx"
-import LightningCursor from "./components/LightningCursor.jsx"
 import {Route , Routes } from "react-router-dom"
 
 
@@ -12,7 +11,6 @@ const App = ()=>{
 
   return (
     <div className="App">
-      <LightningCursor />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home/>} />
