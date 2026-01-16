@@ -34,10 +34,8 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-lg text-gray-300 mb-8"
           >
-            A passionate MERN Stack Developer, Java DSA solver, and Blockchain learner.
-            I enjoy building modern, responsive applications and working with tools like Docker
-            to create efficient and scalable environments. I'm focused on writing clean code,
-            improving problem-solving skills, and exploring new technologies to grow as a developer.
+           MERN and Next.js developer using TypeScript to build premium full-stack apps.
+            Clean architecture, scalable APIs, and real projects delivered consistently.
           </motion.p>
 
           {/* BUTTONS */}
