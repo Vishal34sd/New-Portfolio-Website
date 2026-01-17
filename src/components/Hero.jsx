@@ -23,16 +23,16 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl md:text-4xl font-semibold mb-6 typewriter"
+            className="text-2xl md:text-4xl font-semibold mb-6 "
           >
-            Full Stack Developer
+            <span className="typewriter-loop ml-32 "></span>
           </motion.h2>
 
           <motion.p 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-lg text-gray-300 mb-8"
+            className="text-lg text-gray-300 mb-16"
           >
            MERN and Next.js developer using TypeScript to build premium full-stack apps.
             Clean architecture, scalable APIs, and real projects delivered consistently.
@@ -49,7 +49,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="#project" 
-              className="px-6 py-3 bg-purple rounded-lg font-medium hover:bg-purple/80 transition duration-300"
+              className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500  rounded-lg font-medium hover:bg-purple/80 transition duration-300"
             >
               View Work
             </motion.a>

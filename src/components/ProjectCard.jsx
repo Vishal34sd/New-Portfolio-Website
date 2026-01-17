@@ -1,7 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const ProjectCard = ({ title, description, image, tech, demo, code, icons }) => {
+
+const iconUrl = (key) => `https://skillicons.dev/icons?i=${key}`;
+
+const ProjectCard = ({
+  title,
+  description,
+  image,
+  tech,
+  demo,
+  code,
+  iconKeys, 
+}) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 18 }}
@@ -37,29 +48,28 @@ const ProjectCard = ({ title, description, image, tech, demo, code, icons }) => 
         <div className="flex items-start justify-between gap-4">
           <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
 
-          <span className="hidden md:inline-flex px-3 py-1 rounded-full text-xs font-medium
-          border border-white/10 bg-dark-400/40 text-gray-200">
+          <span
+            className="hidden md:inline-flex px-3 py-1 rounded-full text-xs font-medium
+          border border-white/10 bg-dark-400/40 text-gray-200"
+          >
             Featured
           </span>
         </div>
 
-        <p className="text-gray-400 mt-2 mb-5 leading-relaxed">
-          {description}
-        </p>
+        <p className="text-gray-400 mt-2 mb-5 leading-relaxed">{description}</p>
 
-        {/* Icons */}
-        {icons?.length > 0 && (
+        
+        {iconKeys?.length > 0 && (
           <div className="flex flex-wrap gap-3 mb-6">
-            {icons.map((Icon, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.12, rotate: 6 }}
-                transition={{ type: "spring", stiffness: 260 }}
-                className="p-2 rounded-full border border-white/10 bg-dark-400/40
-                hover:border-purple/30 hover:bg-purple/10 transition duration-300"
-              >
-                <Icon className="w-6 h-6 text-purple drop-shadow-[0_0_10px_rgba(168,85,247,0.55)]" />
-              </motion.div>
+            {iconKeys.map((key, index) => (
+              
+                <img
+                  src={iconUrl(key)}
+                  alt={key}
+                  className="w-7 h-7 "
+                  loading="lazy"
+                />
+              
             ))}
           </div>
         )}

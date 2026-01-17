@@ -24,20 +24,58 @@ html {
     --color-blue: #3B82F6;
 }
 
-.typewriter {
-    overflow: hidden;
-    border-right: 0.15em solid #8B5CF6;
-    white-space: nowrap;
-    width: 0;
-    animation: typing 3s steps(20, end) forwards, blink-caret 0.75s step-end 4;
+.typewriter-loop {
+  display: inline-block;
+  position: relative;
+  color: white;
+  font-weight: 700;
+  padding-right: 8px;
 }
 
-@keyframes typing {
-    from { width: 0; }
-    to { width: 15ch; }
+/* Cursor */
+.typewriter-loop::after {
+  content: "";
+  position: absolute;
+  right: -3px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background:#f8fafc;
+  animation: blink 0.7s infinite;
 }
 
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: #8B5CF6; } /* FIXED */
+/* The typing text */
+.typewriter-loop::before {
+  content: "MERN Developer";
+  color: #f8fafc;
+  animation: typingWords 12s infinite;
 }
+
+/* Cursor blink */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+
+@keyframes typingWords {
+  /* Word 1: MERN Developer */
+  0% { content: "MERN Developer"; }
+  0%, 8% { clip-path: inset(0 100% 0 0); }      
+  12%, 22% { clip-path: inset(0 0 0 0); }       
+  26%, 32% { clip-path: inset(0 100% 0 0); }   
+
+  /* Word 2: Next.js Developer */
+  33% { content: "Next.js Developer"; }
+  33%, 41% { clip-path: inset(0 100% 0 0); }
+  45%, 56% { clip-path: inset(0 0 0 0); }
+  60%, 66% { clip-path: inset(0 100% 0 0); }
+
+  /* Word 3: Full Stack Developer */
+  67% { content: "Full Stack Developer"; }
+  67%, 75% { clip-path: inset(0 100% 0 0); }
+  79%, 91% { clip-path: inset(0 0 0 0); }
+  94%, 100% { clip-path: inset(0 100% 0 0); }
+}
+
+

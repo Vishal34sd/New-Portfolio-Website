@@ -13,12 +13,12 @@ const GithubActivity = () => {
     following: 0,
   });
 
-  // Theme similar to GitHub dark
+  
   const theme = {
     dark: ["#161B22", "#0e4429", "#006d32", "#26a641", "#39d353"],
   };
 
-  // ✅ Fetch GitHub Stats (Repos, Followers, Following)
+  
   useEffect(() => {
     const fetchGithubStats = async () => {
       try {
@@ -38,7 +38,7 @@ const GithubActivity = () => {
     fetchGithubStats();
   }, [username]);
 
-  // ✅ Filter contributions and calculate total
+  
   const selectLastMonthsAndTotal = (contributions) => {
     const lastDate = new Date();
     const firstDate = new Date();
@@ -107,7 +107,7 @@ const GithubActivity = () => {
             <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 bg-dark-400/40">
               <FaCircle className="text-gray-400 text-xs" />
               <span className="text-gray-200 text-sm font-medium">
-                Building & Shipping 🚀
+                Building & Shipping 
               </span>
             </div>
 
