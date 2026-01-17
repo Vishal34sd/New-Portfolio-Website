@@ -78,6 +78,17 @@ export const skills = [
 
 export const projects = [
   {
+  title: "Orbital CLI",
+  description:
+    "A powerful Next.js + Node.js CLI toolkit with OAuth authentication, smart tool selection (web search, AI chat, agentic mode), and a clean Tailwind-powered UI for smooth workflows.",
+  image: "/orbital.png",
+  tech: ["Next.js", "Tailwind CSS", "Node.js", "Express.js"],
+  iconKeys: ["nextjs", "tailwind", "nodejs", "express", "ai"],
+  demo: "https://your-demo-link.vercel.app",
+  code: "https://github.com/Vishal34sd/your-orbital-cli-repo",
+}
+,
+  {
     title: "SmartExpense",
     description:
       " A smart MERN expense tracker with AI insights (RAG + LangChain + Gemini). Secure authentication, smooth UI, and crystal-clear spending analytics.",

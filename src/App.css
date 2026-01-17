@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
+@custom-variant light (&:where(.light, .light *));
+
 * {
     font-family: Saira, sans-serif;
 }
@@ -33,6 +35,10 @@ html {
   padding-right: 8px;
 }
 
+.light .typewriter-loop {
+  color: #0f172a;
+}
+
 /* Cursor */
 .typewriter-loop::after {
   content: "";
@@ -45,11 +51,19 @@ html {
   animation: blink 0.7s infinite;
 }
 
+.light .typewriter-loop::after {
+  background: #0f172a;
+}
+
 /* The typing text */
 .typewriter-loop::before {
   content: "MERN Developer";
   color: #f8fafc;
   animation: typingWords 12s infinite;
+}
+
+.light .typewriter-loop::before {
+  color: #0f172a;
 }
 
 /* Cursor blink */

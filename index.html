@@ -5,8 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/title_logo4.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vishal-Portfolio</title>
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("theme");
+          if (theme === "light") document.documentElement.classList.add("light");
+        } catch (e) {
+          // ignore
+        }
+      })();
+    </script>
   </head>
-  <body class = "bg-[#1a1a1a] text-[#f8fafc]">
+  <body class="bg-[#1a1a1a] text-[#f8fafc] light:bg-linear-to-b light:from-slate-50 light:via-white light:to-purple-50 light:text-slate-900 transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

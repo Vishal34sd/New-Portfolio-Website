@@ -20,7 +20,7 @@ const cardVariants = {
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-16 sm:py-20 bg-dark-100 text-white">
+    <section id="skills" className="scroll-mt-28 py-16 sm:py-20 bg-dark-100 text-white light:bg-slate-50 light:text-slate-900 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Heading */}
         <motion.div
@@ -33,7 +33,7 @@ const Skills = () => {
           <h2 className="text-3xl font-bold">
             My <span className="text-purple">Skills</span>
           </h2>
-          <p className="mt-3 text-gray-400 text-center max-w-2xl mx-auto">
+          <p className="mt-3 text-gray-400 light:text-slate-600 text-center max-w-2xl mx-auto transition-colors duration-300">
             Technologies I use to build scalable applications, craft smooth user
             experiences, and ship high-quality projects.
           </p>
@@ -54,7 +54,8 @@ const Skills = () => {
               whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 240 }}
               className="relative overflow-hidden rounded-2xl p-6 cursor-pointer
-              bg-dark-300/60 border border-white/5 backdrop-blur-xl shadow-xl group"
+              bg-dark-300/60 border border-white/5 backdrop-blur-xl shadow-xl group
+              light:bg-white/70 light:border-slate-200 transition-colors duration-300"
             >
               {/* Hover Glow */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
@@ -86,7 +87,7 @@ const Skills = () => {
                 </div>
 
                 {/* Description */}
-                <p className="mb-5 text-gray-300 leading-relaxed">
+                <p className="mb-5 text-gray-300 light:text-slate-700 leading-relaxed transition-colors duration-300">
                   {skill.description ||
                     "I use these skills to design, build, and deliver reliable applications with clean architecture and strong performance."}
                 </p>
@@ -100,6 +101,7 @@ const Skills = () => {
                       transition={{ type: "spring", stiffness: 260 }}
                       className="flex items-center gap-2 px-3 py-1 rounded-full text-sm
                       bg-dark-400/60 border border-white/5 text-gray-200
+                      light:bg-slate-100/70 light:border-slate-200 light:text-slate-700
                       hover:bg-purple/20 hover:border-purple/30 transition duration-300"
                     >
                       <img
@@ -114,7 +116,7 @@ const Skills = () => {
                 </div>
 
                 {/* Bottom Line */}
-                <div className="mt-6 h-[2px] w-full overflow-hidden bg-white/5 rounded-full">
+                <div className="mt-6 h-0.5 w-full overflow-hidden bg-white/5 light:bg-slate-200/70 rounded-full transition-colors duration-300">
                   <div className="h-full w-1/3 bg-purple/60 blur-sm animate-pulse" />
                 </div>
               </div>

@@ -72,7 +72,7 @@ const item = {
 
 const Hobbies = () => {
     return (
-        <section id="hobbies" className="py-16 sm:py-24 bg-dark-200 text-white relative overflow-hidden">
+        <section id="hobbies" className="scroll-mt-28 py-16 sm:py-24 bg-dark-200 text-white light:bg-slate-100 light:text-slate-900 relative overflow-hidden transition-colors duration-300">
             {/* Ambient background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-40" />
@@ -111,7 +111,7 @@ const Hobbies = () => {
                     <h2 className="text-3xl font-bold leading-tight">
                         My <span className="text-purple">Hobbies</span> Universe
                     </h2>
-                    <p className="mt-3 text-gray-400 max-w-2xl mx-auto">
+                    <p className="mt-3 text-gray-400 light:text-slate-600 max-w-2xl mx-auto transition-colors duration-300">
                         When I’m not coding — I’m either bingeing legendary series or vibing to Spotify
                         like it’s my second OS 🎧
                     </p>
@@ -125,7 +125,7 @@ const Hobbies = () => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className="relative rounded-2xl border border-white/5 bg-dark-300/60 backdrop-blur-xl shadow-xl p-6 md:p-8 overflow-hidden"
+                        className="relative rounded-2xl border border-white/5 bg-dark-300/60 backdrop-blur-xl shadow-xl p-6 md:p-8 overflow-hidden light:border-slate-200 light:bg-white/70 transition-colors duration-300"
                     >
                         {/* Glow */}
                         <div className="absolute inset-0 pointer-events-none opacity-40">
@@ -140,7 +140,7 @@ const Hobbies = () => {
                                 </span>
                                 <div>
                                     <h3 className="text-xl md:text-2xl font-bold">Web Series I Love</h3>
-                                    <p className="text-gray-400 text-sm">Dark vibes. Plot twists. Goosebumps.</p>
+                                    <p className="text-gray-400 light:text-slate-600 text-sm transition-colors duration-300">Dark vibes. Plot twists. Goosebumps.</p>
                                 </div>
                             </div>
 
@@ -157,7 +157,7 @@ const Hobbies = () => {
                                     variants={item}
                                     whileHover={{ y: -6, scale: 1.02 }}
                                     transition={{ type: "spring", stiffness: 260, damping: 16 }}
-                                    className="group relative rounded-2xl overflow-hidden border border-white/10 bg-black/40"
+                                    className="group relative rounded-2xl overflow-hidden border border-white/10 bg-black/40 light:border-slate-200 light:bg-white transition-colors duration-300"
                                     style={{
                                         boxShadow: `0 0 40px ${s.glow}`,
                                     }}
@@ -172,7 +172,7 @@ const Hobbies = () => {
                                         />
                                         {/* Overlay gradient */}
                                         <div
-                                            className={`absolute inset-0 bg-gradient-to-tr ${s.accent}`}
+                                            className={`absolute inset-0 bg-linear-to-tr ${s.accent}`}
                                         />
                                         {/* Floating play */}
                                         <motion.div
@@ -189,10 +189,10 @@ const Hobbies = () => {
                                     {/* Text */}
                                     <div className="p-4">
                                         <h4 className="font-extrabold text-lg tracking-tight">{s.title}</h4>
-                                        <p className="text-gray-400 text-sm mt-1">{s.tag}</p>
+                                        <p className="text-gray-400 light:text-slate-600 text-sm mt-1 transition-colors duration-300">{s.tag}</p>
 
                                         <div className="mt-4 flex items-center justify-between">
-                                            <span className="text-xs text-gray-300 bg-white/5 border border-amber-200 px-3 py-1.5 rounded-full">
+                                            <span className="text-xs text-gray-300 light:text-slate-700 bg-white/5 light:bg-slate-100 border border-amber-200 px-3 py-1.5 rounded-full transition-colors duration-300">
                                                 Rewatch-worthy
                                             </span>
                                             <span className={`text-xs font-semibold ${s.moodColor} border border-amber-300 rounded-3xl p-1`}>
@@ -213,7 +213,7 @@ const Hobbies = () => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className="relative rounded-2xl border border-white/5 bg-dark-300/60 backdrop-blur-xl shadow-xl p-6 md:p-8 overflow-hidden"
+                        className="relative rounded-2xl border border-white/5 bg-dark-300/60 backdrop-blur-xl shadow-xl p-6 md:p-8 overflow-hidden light:border-slate-200 light:bg-white/70 transition-colors duration-300"
                     >
                         {/* Glow */}
                         <div className="absolute inset-0 pointer-events-none opacity-40">
@@ -228,7 +228,7 @@ const Hobbies = () => {
                                 </span>
                                 <div>
                                     <h3 className="text-xl md:text-2xl font-bold">Spotify Vibes</h3>
-                                    <p className="text-gray-400 text-sm">
+                                    <p className="text-gray-400 light:text-slate-600 text-sm transition-colors duration-300">
                                         I code better when music is loud in my head 🎧
                                     </p>
                                 </div>
@@ -246,27 +246,27 @@ const Hobbies = () => {
                                     variants={item}
                                     whileHover={{ y: -5 }}
                                     transition={{ type: "spring", stiffness: 250, damping: 16 }}
-                                    className="rounded-2xl border border-white/10 bg-black/40 overflow-hidden"
+                                    className="rounded-2xl border border-white/10 bg-black/40 overflow-hidden light:border-slate-200 light:bg-white transition-colors duration-300"
                                 >
                                     {/* header */}
-                                    <div className="flex items-center gap-3 p-4 border-b border-white/5">
+                                    <div className="flex items-center gap-3 p-4 border-b border-white/5 light:border-slate-200 transition-colors duration-300">
                                         <span className="w-10 h-10 rounded-xl bg-purple/15 border border-purple/20 flex items-center justify-center text-purple">
                                             {song.icon}
                                         </span>
 
                                         <div className="flex-1">
                                             <h4 className="font-bold text-base">{song.title}</h4>
-                                            <p className="text-xs text-gray-400">{song.subtitle}</p>
+                                            <p className="text-xs text-gray-400 light:text-slate-600 transition-colors duration-300">{song.subtitle}</p>
                                         </div>
 
-                                        <span className="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-200">
+                                        <span className="text-xs px-3 py-1.5 rounded-full bg-white/5 light:bg-slate-100 border border-white/10 light:border-slate-200 text-gray-200 light:text-slate-700 transition-colors duration-300">
                                             loop ♾️
                                         </span>
                                     </div>
 
                                     {/* spotify iframe */}
                                     <div className="p-4">
-                                        <div className="rounded-xl overflow-hidden border border-white/10">
+                                        <div className="rounded-xl overflow-hidden border border-white/10 light:border-slate-200 transition-colors duration-300">
                                             <iframe
                                                 style={{ borderRadius: 12 }}
                                                 src={song.embedUrl}
@@ -291,9 +291,9 @@ const Hobbies = () => {
                             transition={{ duration: 0.7 }}
                             className="relative mt-7 text-center"
                         >
-                            <p className="text-gray-400 text-sm">
+                            <p className="text-gray-400 light:text-slate-600 text-sm transition-colors duration-300">
                                 Soundtrack of my life:{" "}
-                                <span className="text-white font-semibold">Arijit</span> +{" "}
+                                <span className="text-white light:text-slate-900 font-semibold transition-colors duration-300">Arijit</span> +{" "}
                                 <span className="text-purple font-semibold">coding</span> +{" "}
                                 <span className="text-green-300 font-semibold">late nights</span> 🌙
                             </p>

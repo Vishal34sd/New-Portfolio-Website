@@ -22,6 +22,7 @@ const ProjectCard = ({
       whileHover={{ y: -10 }}
       className="relative group rounded-2xl overflow-hidden cursor-pointer
       border border-white/10 bg-dark-300/60 backdrop-blur-xl shadow-lg
+      light:border-slate-200 light:bg-white/80
       hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.7)]
       transition-all duration-300"
     >
@@ -50,13 +51,14 @@ const ProjectCard = ({
 
           <span
             className="hidden md:inline-flex px-3 py-1 rounded-full text-xs font-medium
-          border border-white/10 bg-dark-400/40 text-gray-200"
+          border border-white/10 bg-dark-400/40 text-gray-200
+          light:border-slate-200 light:bg-slate-100/70 light:text-slate-700 transition-colors duration-300"
           >
             Featured
           </span>
         </div>
 
-        <p className="text-gray-400 mt-2 mb-5 leading-relaxed">{description}</p>
+        <p className="text-gray-400 light:text-slate-600 mt-2 mb-5 leading-relaxed transition-colors duration-300">{description}</p>
 
         
         {iconKeys?.length > 0 && (
