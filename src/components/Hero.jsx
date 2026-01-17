@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="min-h-screen flex items-center pt-20 pb-16 bg-gradient-to-r from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a] ml-20 "
+      className="min-h-screen flex items-center pt-20 pb-16 bg-gradient-to-r from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a]  "
     >
       <div className="container mx-auto px-8 flex flex-col md:flex-row items-center justify-between mt-10">
         <div className="md:w-7/12 mb-10 md:mb-0">
