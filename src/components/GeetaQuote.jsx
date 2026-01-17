@@ -1,52 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { FaOm, FaRegCalendarAlt, FaQuoteLeft, FaLanguage } from "react-icons/fa";
-
-// ✅ Add more quotes later easily
-const gitaQuotes = [
-  {
-    id: 1,
-    verse: "BG 2.47",
-    en: "You have the right to perform your duty, but not to the fruits of your actions.",
-    hi: "तुम्हारा अधिकार केवल कर्म करने में है, फल में कभी नहीं।",
-    vibe: "Karma • Discipline • Focus",
-  },
-  {
-    id: 2,
-    verse: "BG 2.14",
-    en: "Happiness and distress are temporary. Learn to tolerate them.",
-    hi: "सुख और दुःख क्षणिक हैं — उन्हें सहन करना सीखो।",
-    vibe: "Balance • Strength • Patience",
-  },
-  {
-    id: 3,
-    verse: "BG 6.5",
-    en: "Elevate yourself through your own mind, not degrade yourself.",
-    hi: "अपने मन द्वारा स्वयं को उठाओ, गिराओ मत।",
-    vibe: "Self-growth • Mindset • Control",
-  },
-  {
-    id: 4,
-    verse: "BG 4.7",
-    en: "Whenever there is decline of dharma, I manifest myself.",
-    hi: "जब-जब धर्म की हानि होती है, तब-तब मैं प्रकट होता हूँ।",
-    vibe: "Dharma • Hope • Light",
-  },
-  {
-    id: 5,
-    verse: "BG 2.20",
-    en: "The soul is neither born nor does it die.",
-    hi: "आत्मा न जन्म लेती है, न मरती है।",
-    vibe: "Soul • Truth • Eternity",
-  },
-  {
-    id: 6,
-    verse: "BG 18.66",
-    en: "Surrender unto Me, I shall free you from all fears.",
-    hi: "मेरी शरण में आओ, मैं तुम्हें भय से मुक्त करूँगा।",
-    vibe: "Surrender • Peace • Faith",
-  },
-];
+import { gitaQuotes } from "../assets/assets";
 
 const getDailyIndex = (length) => {
   
@@ -96,8 +51,8 @@ const GitaQuote = () => {
     >
       {/* Background Spiritual Glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-40 bg-purple/20 light:bg-purple/15" />
-        <div className="absolute -bottom-48 -right-40 w-[620px] h-[620px] rounded-full blur-3xl opacity-40 bg-pink/15 light:bg-pink/10" />
+        <div className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-40  light:bg-purple/15" />
+        <div className="absolute -bottom-48 -right-40 w-[620px] h-[620px] rounded-full blur-3xl opacity-40  light:bg-pink/10" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative">

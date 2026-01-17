@@ -67,7 +67,7 @@ const Contact = ()=>{
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className ="space-y-8"
+                        className ="space-y-8 mt-10 ml-5"
                     >
                         <div className ="flex items-start">
                             <div className ="text-purple text-2xl mr-4">
