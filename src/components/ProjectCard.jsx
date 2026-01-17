@@ -82,7 +82,7 @@ const ProjectCard = ({
               target="_blank"
               rel="noreferrer"
               className="flex-1 text-center px-4 py-2 rounded-lg font-semibold
-              bg-purple/90 hover:bg-purple transition duration-300
+              bg-gradient-to-r from-purple-500 to-pink-500  hover:bg-purple transition duration-300
               shadow-[0_10px_30px_-12px_rgba(168,85,247,0.6)]"
             >
               Live Demo

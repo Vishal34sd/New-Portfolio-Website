@@ -6,7 +6,7 @@ const Contact = ()=>{
     return(
         <div
         id = "contact"
-        className = "py-20 bg-dark-200 ">
+        className = "py-20 bg-dark-100 ">
             <div className="container mx-auto px-6">
                 <motion.h2 
                     initial={{ opacity: 0, y: -20 }}

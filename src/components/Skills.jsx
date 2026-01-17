@@ -30,7 +30,7 @@ const Skills = () => {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-5xl font-bold">
+          <h2 className="text-3xl font-bold">
             My <span className="text-purple">Skills</span>
           </h2>
           <p className="mt-3 text-gray-400 text-center max-w-2xl mx-auto">

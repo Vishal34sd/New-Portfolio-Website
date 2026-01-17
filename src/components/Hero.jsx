@@ -1,16 +1,25 @@
 import { motion } from "framer-motion";
+
 const Hero = () => {
+  const techStack = [
+    { name: "TypeScript", icon: "typescript" },
+    { name: "React", icon: "react" },
+    { name: "Next.js", icon: "nextjs" },
+    { name: "Node.js", icon: "nodejs" },
+    { name: "Express", icon: "express" },
+    { name: "MongoDB", icon: "mongodb" },
+    { name: "PostgreSQL", icon: "postgres" },
+    { name: "Tailwind", icon: "tailwind" },
+  ];
+
   return (
     <div
       id="home"
       className="min-h-screen flex items-center pt-20 pb-16 bg-gradient-to-r from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a]"
     >
       <div className="container mx-auto px-8 flex flex-col md:flex-row items-center justify-between">
-        
-        {/* LEFT CONTENT */}
         <div className="md:w-7/12 mb-10 md:mb-0">
-          
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -19,87 +28,99 @@ const Hero = () => {
             Hi, I'm <span className="text-purple">Vishal Dubey</span>
           </motion.h1>
 
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl md:text-4xl font-semibold mb-6 "
+            className="text-2xl md:text-4xl font-semibold mb-6"
           >
-            <span className="typewriter-loop ml-32 "></span>
+            <span className="typewriter-loop ml-32"></span>
           </motion.h2>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-lg text-gray-300 mb-16"
+            className="text-lg text-gray-300 mb-16 leading-relaxed"
           >
-           MERN and Next.js developer using TypeScript to build premium full-stack apps.
-            Clean architecture, scalable APIs, and real projects delivered consistently.
+            I’m a{" "}
+            <span className="text-white font-semibold">
+              Full Stack Developer
+            </span>{" "}
+            who builds modern, fast and interactive web apps using{" "}
+            <span className="inline-flex flex-wrap gap-2 mx-2 align-middle">
+              {techStack.map((tech) => (
+                <motion.button
+                  key={tech.name}
+                  whileHover={{ scale: 1.08, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold bg-white/5 border-2 border-dotted border-white/20 text-white/90 hover:bg-purple/15 hover:border-purple/50 hover:text-purple transition duration-300"
+                >
+                  <img
+                    src={`https://skillicons.dev/icons?i=${tech.icon}`}
+                    alt={tech.name}
+                    loading="lazy"
+                    className="w-5 h-5"
+                  />
+                  {tech.name}
+                </motion.button>
+              ))}
+            </span>
+            . I focus on clean UI, scalable backend, APIs, and smooth user
+            experience — always building and shipping 🚀
           </motion.p>
 
-          {/* BUTTONS */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex space-x-4"
           >
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="#project" 
-              className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500  rounded-lg font-medium hover:bg-purple/80 transition duration-300"
+              href="#project"
+              className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-medium transition duration-300"
             >
               View Work
             </motion.a>
 
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="#contact" 
+              href="#contact"
               className="px-6 py-3 border border-purple rounded-lg font-medium hover:bg-purple/20 transition duration-300"
             >
               Contact Me
             </motion.a>
 
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/New_Resume_Vishal.pdf" 
+              href="/New_Resume_Vishal.pdf"
               download="Vishal_Dubey_Resume.pdf"
               className="px-6 py-3 border border-purple rounded-lg font-medium hover:bg-purple/20 transition duration-300"
             >
               Download Resume
             </motion.a>
           </motion.div>
-
         </div>
 
-        {/* END LEFT CONTENT */}
-        
-      {/*right side image */}
-      <div className="md:w-5/12 flex justify-center">
-        <div className="relative w-64 h-64 md:w-80 md:h-80">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple to-pink opacity-70">
+        <div className="md:w-5/12 flex justify-center">
+          <div className="relative w-64 h-64 md:w-80 md:h-80">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple to-pink opacity-70"></div>
+
             <motion.img
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              animate = {{y:[0 , -20, 0]}}
-              // transition = {{
-              //   duration : 4 ,
-              //   repeat : Infinity ,
-              //   repeatType  : "loop" ,
-              //   ease : "easeInOut"
-              // }}
-              className="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover z-10 animate-float"
+              animate={{ y: [0, -20, 0] }}
+              className="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover z-10"
               src="/bio_pic_2.png"
               alt="image-logo"
             />
           </div>
         </div>
-      </div>
       </div>
     </div>
   );

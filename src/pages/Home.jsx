@@ -4,6 +4,7 @@ import Projects from "../components/Projects"
 import Contact from "../components/Contact"
 import GithubActivity from "../components/GithubActivity"
 import Hobbies from "../components/Hobbies"
+import GeetaQuote from "../components/GeetaQuote"
 
 
 const Home = ()=>{
@@ -16,6 +17,7 @@ const Home = ()=>{
             <GithubActivity/>
             <Hobbies/>
             <Contact/>
+            <GeetaQuote/>
         </div>
     )
 }

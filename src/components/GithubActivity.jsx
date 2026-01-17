@@ -65,7 +65,7 @@ const GithubActivity = () => {
           transition={{ duration: 0.7, type: "spring" }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+          <h2 className="text-3xl font-bold leading-tight">
             GitHub <span className="text-purple">Activity</span>
           </h2>
           <p className="mt-3 text-gray-400 max-w-xl mx-auto">
