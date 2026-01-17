@@ -9,9 +9,9 @@ const Projects = () =>{
     return(
         <div
         id = "project"
-        className = "py-20 bg-dark-200"
+        className = "py-16 sm:py-20 bg-dark-200"
         >
-            <div className = "container mx-auto px-6">
+            <div className = "container mx-auto px-4 sm:px-6">
                 <motion.h2 
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ const Projects = () =>{
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className ="text-gray-400 text-center max-w-2xl mx-auto mb-16"
+                    className ="text-gray-400 text-center max-w-2xl mx-auto mb-10 sm:mb-16"
                 >
                     A selection of my recent projects 
                 </motion.p>

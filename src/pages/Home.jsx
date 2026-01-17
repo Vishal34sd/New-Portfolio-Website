@@ -9,7 +9,7 @@ import GeetaQuote from "../components/GeetaQuote"
 
 const Home = ()=>{
     return(
-        <div>
+        <div className="overflow-x-hidden">
             <Hero/>
             
             <Skills/>

@@ -44,7 +44,7 @@ const ProjectCard = ({
       </div>
 
       {/* Content */}
-      <div className="relative p-6">
+      <div className="relative p-5 sm:p-6">
         <div className="flex items-start justify-between gap-4">
           <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
 
@@ -75,7 +75,7 @@ const ProjectCard = ({
         )}
 
         {/* Buttons */}
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-3">
           {demo && (
             <a
               href={demo}

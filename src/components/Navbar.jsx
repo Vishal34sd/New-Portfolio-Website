@@ -11,15 +11,16 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed w-full z-50 bg-dark-100/60 backdrop-blur-sm py-4 px-8 shadow-lg"
+            className="fixed w-full z-50 bg-dark-100/60 backdrop-blur-sm py-4 px-4 sm:px-6 lg:px-8 shadow-lg"
         >
-            <div className="mx-auto flex justify-between items-center">
+            <div className="max-w-6xl mx-auto flex justify-between items-center">
                 <div>
-                    <a href="#home" className="text-3xl font-bold text-white">
-                        Vishal
-                        <span className="text-purple">Dubey</span>
-
-                        <div className="w-4 h-4 bg-purple rounded-full"></div>
+                    <a href="#home" className="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
+                        <span>
+                          Vishal
+                          <span className="text-purple">Dubey</span>
+                        </span>
+                        <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-purple rounded-full" />
                     </a>
 
                 </div>
@@ -48,10 +49,10 @@ const Navbar = () => {
                showMenu && (
                 <motion.div 
                     initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "100vh" }}
+                    animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className ="md:hidden mt-4 bg-dark-300 rounded-lg p-4 flex flex-col space-y-4 text-center justify-center overflow-hidden"
+                    className ="md:hidden mt-4 bg-dark-300 rounded-lg p-4 flex flex-col space-y-4 text-center overflow-hidden max-h-[70vh] overflow-y-auto"
                 >
                     {["Home", "About", "Skills", "Projects", "Contact"].map((item, index) => (
                         <a key={index} onClick = {()=>setShowMenu(!showMenu)} href={`#${item.toLowerCase().replace("projects", "project")}`} className="relative text-white/80 transition duration-300 hover:text-purple group text-xl">

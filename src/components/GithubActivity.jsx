@@ -55,8 +55,8 @@ const GithubActivity = () => {
   };
 
   return (
-    <section className="py-20 bg-dark-100 text-white" id="github">
-      <div className="container mx-auto px-6">
+    <section className="py-16 sm:py-20 bg-dark-100 text-white" id="github">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -16 }}

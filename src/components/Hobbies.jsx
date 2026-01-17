@@ -72,7 +72,7 @@ const item = {
 
 const Hobbies = () => {
     return (
-        <section id="hobbies" className="py-24 bg-dark-200 text-white relative overflow-hidden">
+        <section id="hobbies" className="py-16 sm:py-24 bg-dark-200 text-white relative overflow-hidden">
             {/* Ambient background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-40" />
@@ -99,7 +99,7 @@ const Hobbies = () => {
                 ))}
             </div>
 
-            <div className="container mx-auto px-6 relative">
+            <div className="container mx-auto px-4 sm:px-6 relative">
                 {/* Heading */}
                 <motion.div
                     initial={{ opacity: 0, y: -16 }}

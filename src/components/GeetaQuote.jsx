@@ -90,7 +90,7 @@ const GitaQuote = () => {
   return (
     <section
       id="gita"
-      className="relative py-24 bg-dark-200 text-white overflow-hidden "
+      className="relative py-16 sm:py-24 bg-dark-200 text-white overflow-hidden "
     >
       {/* Background Spiritual Glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -98,7 +98,7 @@ const GitaQuote = () => {
         <div className="absolute -bottom-48 -right-40 w-[620px] h-[620px] rounded-full  blur-3xl opacity-40" />
       </div>
 
-      <div className="container mx-auto px-6 relative">
+      <div className="container mx-auto px-4 sm:px-6 relative">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -18 }}
@@ -107,7 +107,7 @@ const GitaQuote = () => {
           transition={{ duration: 0.7, type: "spring" }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+          <h2 className="text-3xl font-bold leading-tight">
             A <span className="text-purple">Gita Quote</span> for Your Day
           </h2>
           <p className="mt-3 text-gray-400 max-w-2xl mx-auto">
