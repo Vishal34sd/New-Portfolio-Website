@@ -121,7 +121,7 @@ const GitaQuote = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.75, type: "spring" }}
-          className="relative max-w-4xl mx-auto rounded-2xl border border-yellow-500
+          className="relative max-w-4xl mx-auto rounded-2xl 
           bg-dark-300/60 backdrop-blur-xl shadow-xl p-6 md:p-10 overflow-hidden"
         >
           {/* Card glow */}

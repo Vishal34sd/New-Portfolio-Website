@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ConnectNavbar from "./ConnectNavbar";
 
 const Hero = () => {
   const techStack = [
@@ -15,9 +16,9 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="min-h-screen flex items-center pt-20 pb-16 bg-gradient-to-r from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a]"
+      className="min-h-screen flex items-center pt-20 pb-16 bg-gradient-to-r from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a] ml-20 "
     >
-      <div className="container mx-auto px-8 flex flex-col md:flex-row items-center justify-between">
+      <div className="container mx-auto px-8 flex flex-col md:flex-row items-center justify-between mt-10">
         <div className="md:w-7/12 mb-10 md:mb-0">
           <motion.h1
             initial={{ opacity: 0, x: -50 }}
@@ -41,7 +42,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-lg text-gray-300 mb-16 leading-relaxed"
+            className="text-lg text-gray-300 mb-12 leading-relaxed"
           >
             I’m a{" "}
             <span className="text-white font-semibold">
@@ -70,11 +71,12 @@ const Hero = () => {
             experience — always building and shipping 🚀
           </motion.p>
 
+            <ConnectNavbar/>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex space-x-4"
+            className="flex space-x-4 mt-5"
           >
             <motion.a
               whileHover={{ scale: 1.05 }}
