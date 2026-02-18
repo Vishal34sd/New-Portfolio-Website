@@ -11,7 +11,7 @@ const ProjectCard = ({
   tech,
   demo,
   code,
-  iconKeys, 
+  iconKeys,
 }) => {
   return (
     <motion.div
@@ -22,7 +22,7 @@ const ProjectCard = ({
       whileHover={{ y: -10 }}
       className="relative group rounded-2xl overflow-hidden cursor-pointer
       border border-white/10 bg-dark-300/60 backdrop-blur-xl shadow-lg
-      light:border-slate-200 light:bg-white/80
+      light:border-light-border light:bg-light-card card-pro
       hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.7)]
       transition-all duration-300"
     >
@@ -52,26 +52,26 @@ const ProjectCard = ({
           <span
             className="hidden md:inline-flex px-3 py-1 rounded-full text-xs font-medium
           border border-white/10 bg-dark-400/40 text-gray-200
-          light:border-slate-200 light:bg-slate-100/70 light:text-slate-700 transition-colors duration-300"
+          light:border-light-border light:bg-light-surface light:text-navy-soft transition-colors duration-300"
           >
             Featured
           </span>
         </div>
 
-        <p className="text-gray-400 light:text-slate-600 mt-2 mb-5 leading-relaxed transition-colors duration-300">{description}</p>
+        <p className="text-gray-400 light:text-navy-muted mt-2 mb-5 leading-relaxed transition-colors duration-300">{description}</p>
 
-        
+
         {iconKeys?.length > 0 && (
           <div className="flex flex-wrap gap-3 mb-6">
             {iconKeys.map((key, index) => (
-              
+
                 <img
                   src={iconUrl(key)}
                   alt={key}
                   className="w-7 h-7 "
                   loading="lazy"
                 />
-              
+
             ))}
           </div>
         )}
@@ -83,9 +83,7 @@ const ProjectCard = ({
               href={demo}
               target="_blank"
               rel="noreferrer"
-              className="flex-1 text-center px-4 py-2 rounded-lg font-semibold
-              bg-gradient-to-r from-purple-500 to-pink-500  hover:bg-purple transition duration-300
-              shadow-[0_10px_30px_-12px_rgba(168,85,247,0.6)]"
+              className="btn-3d flex-1 text-center px-4 py-2 rounded-lg font-semibold"
             >
               Live Demo
             </a>
@@ -95,8 +93,7 @@ const ProjectCard = ({
             href={code}
             target="_blank"
             rel="noreferrer"
-            className={`text-center px-4 py-2 rounded-lg font-semibold border border-purple/60
-            hover:bg-purple/10 hover:border-purple transition duration-300
+            className={`btn-3d-outline text-center px-4 py-2 rounded-lg font-semibold
             ${demo ? "flex-1" : "w-full"}`}
           >
             Source Code

@@ -15,7 +15,7 @@ const ConnectNavbar = () => {
     <div
       className="inline-block rounded-4xl bg-black/20 border border-white/10
       px-3 mb-10 backdrop-blur-xl shadow-lg shadow-black/30
-      light:bg-white/60 light:border-slate-200 light:shadow-slate-200/30 transition-colors duration-300"
+      light:bg-white/70 light:border-light-border light:shadow-light-border/30 transition-colors duration-300"
     >
       <motion.div
         initial={{ opacity: 0, y: 12 }}

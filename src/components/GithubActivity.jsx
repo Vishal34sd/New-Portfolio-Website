@@ -13,12 +13,12 @@ const GithubActivity = () => {
     following: 0,
   });
 
-  
+
   const theme = {
     dark: ["#161B22", "#0e4429", "#006d32", "#26a641", "#39d353"],
   };
 
-  
+
   useEffect(() => {
     const fetchGithubStats = async () => {
       try {
@@ -38,7 +38,7 @@ const GithubActivity = () => {
     fetchGithubStats();
   }, [username]);
 
-  
+
   const selectLastMonthsAndTotal = (contributions) => {
     const lastDate = new Date();
     const firstDate = new Date();
@@ -55,7 +55,7 @@ const GithubActivity = () => {
   };
 
   return (
-    <section className="scroll-mt-28 py-16 sm:py-20 bg-dark-100 text-white light:bg-slate-50 light:text-slate-900 transition-colors duration-300" id="github">
+    <section className="scroll-mt-28 py-16 sm:py-20 bg-dark-100 text-white section-bg light:text-navy transition-colors duration-300" id="github">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Heading */}
         <motion.div
@@ -68,7 +68,7 @@ const GithubActivity = () => {
           <h2 className="text-3xl font-bold leading-tight">
             GitHub <span className="text-purple">Activity</span>
           </h2>
-          <p className="mt-3 text-gray-400 light:text-slate-600 max-w-xl mx-auto transition-colors duration-300">
+          <p className="mt-3 text-gray-400 light:text-navy-muted max-w-xl mx-auto transition-colors duration-300">
             Consistency and daily commits — showing my real development journey.
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ const GithubActivity = () => {
           className="relative overflow-hidden rounded-2xl border border-white/5
           bg-dark-300/60 backdrop-blur-xl shadow-xl p-6 md:p-8
           max-w-6xl mx-auto
-          light:border-slate-200 light:bg-white/70 transition-colors duration-300"
+          light:border-light-border light:bg-light-card card-pro transition-colors duration-300"
         >
           {/* Glow */}
           <div className="absolute inset-0 pointer-events-none opacity-40">
@@ -95,9 +95,9 @@ const GithubActivity = () => {
             {/* Total Contributions */}
             <div className="flex items-center gap-3 justify-center">
               <FaGithub className="text-purple text-2xl drop-shadow-[0_0_12px_rgba(168,85,247,0.7)]" />
-              <p className="text-gray-300 light:text-slate-700 font-semibold text-lg transition-colors duration-300">
+              <p className="text-gray-300 light:text-navy-soft font-semibold text-lg transition-colors duration-300">
                 Total:{" "}
-                <span className="text-white light:text-slate-900 font-bold transition-colors duration-300">
+                <span className="text-white light:text-navy font-bold transition-colors duration-300">
                   {total ? total.toLocaleString() : "Loading..."}
                 </span>{" "}
                 contributions
@@ -105,45 +105,45 @@ const GithubActivity = () => {
             </div>
 
             {/* Status */}
-            <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 bg-dark-400/40 light:border-slate-200 light:bg-slate-100/70 transition-colors duration-300">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 bg-dark-400/40 light:border-light-border light:bg-light-surface transition-colors duration-300">
               <FaCircle className="text-gray-400 text-xs" />
-              <span className="text-gray-200 light:text-slate-700 text-sm font-medium transition-colors duration-300">
-                Building & Shipping 
+              <span className="text-gray-200 light:text-navy-soft text-sm font-medium transition-colors duration-300">
+                Building & Shipping
               </span>
             </div>
 
-            {/* ✅ Attractive Stats */}
+            {/* Stats */}
             <div className="flex flex-wrap justify-center gap-4 mt-2">
               {/* Repos */}
-              <div className="px-5 py-3 rounded-xl border border-white/10 bg-dark-400/30 flex items-center gap-3 hover:border-purple/40 transition light:border-slate-200 light:bg-slate-100/70">
+              <div className="px-5 py-3 rounded-xl border border-white/10 bg-dark-400/30 flex items-center gap-3 hover:border-purple/40 transition light:border-light-border light:bg-light-surface">
                 <FaCodeBranch className="text-purple text-xl" />
                 <div className="text-left">
-                  <p className="text-white light:text-slate-900 font-bold text-lg transition-colors duration-300">
+                  <p className="text-white light:text-navy font-bold text-lg transition-colors duration-300">
                     {stats.repos}
                   </p>
-                  <p className="text-gray-400 light:text-slate-600 text-xs transition-colors duration-300">Public Repositories</p>
+                  <p className="text-gray-400 light:text-navy-muted text-xs transition-colors duration-300">Public Repositories</p>
                 </div>
               </div>
 
               {/* Followers */}
-              <div className="px-5 py-3 rounded-xl border border-white/10 bg-dark-400/30 flex items-center gap-3 hover:border-purple/40 transition light:border-slate-200 light:bg-slate-100/70">
+              <div className="px-5 py-3 rounded-xl border border-white/10 bg-dark-400/30 flex items-center gap-3 hover:border-purple/40 transition light:border-light-border light:bg-light-surface">
                 <FaUsers className="text-purple text-xl" />
                 <div className="text-left">
-                  <p className="text-white light:text-slate-900 font-bold text-lg transition-colors duration-300">
+                  <p className="text-white light:text-navy font-bold text-lg transition-colors duration-300">
                     {stats.followers}
                   </p>
-                  <p className="text-gray-400 light:text-slate-600 text-xs transition-colors duration-300">Followers</p>
+                  <p className="text-gray-400 light:text-navy-muted text-xs transition-colors duration-300">Followers</p>
                 </div>
               </div>
 
               {/* Following */}
-              <div className="px-5 py-3 rounded-xl border border-white/10 bg-dark-400/30 flex items-center gap-3 hover:border-purple/40 transition light:border-slate-200 light:bg-slate-100/70">
+              <div className="px-5 py-3 rounded-xl border border-white/10 bg-dark-400/30 flex items-center gap-3 hover:border-purple/40 transition light:border-light-border light:bg-light-surface">
                 <FaUsers className="text-purple text-xl" />
                 <div className="text-left">
-                  <p className="text-white light:text-slate-900 font-bold text-lg transition-colors duration-300">
+                  <p className="text-white light:text-navy font-bold text-lg transition-colors duration-300">
                     {stats.following}
                   </p>
-                  <p className="text-gray-400 light:text-slate-600 text-xs transition-colors duration-300">Following</p>
+                  <p className="text-gray-400 light:text-navy-muted text-xs transition-colors duration-300">Following</p>
                 </div>
               </div>
             </div>
@@ -151,7 +151,7 @@ const GithubActivity = () => {
 
           {/* Calendar */}
           <div className="relative flex justify-center">
-            <div className="w-full overflow-x-auto rounded-xl border border-white/5 bg-black/50 p-5 light:border-slate-200 light:bg-white transition-colors duration-300">
+            <div className="w-full overflow-x-auto rounded-xl border border-white/5 bg-black/50 p-5 light:border-light-border light:bg-light-bg transition-colors duration-300">
               <div className="flex justify-center min-w-[900px] md:min-w-full">
                 <GitHubCalendar
                   username={username}
@@ -170,7 +170,7 @@ const GithubActivity = () => {
 
           {/* Footer center */}
           <div className="relative mt-8 flex flex-col items-center justify-center gap-3 text-center">
-            <p className="text-gray-400 light:text-slate-600 text-sm transition-colors duration-300">
+            <p className="text-gray-400 light:text-navy-muted text-sm transition-colors duration-300">
                I build real-world projects & ship consistently.
             </p>
 

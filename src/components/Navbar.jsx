@@ -49,13 +49,13 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed w-full z-50 bg-dark-100/60 light:bg-white/70 backdrop-blur-sm py-4 px-4 sm:px-6 lg:px-8 shadow-lg light:shadow-md transition-colors duration-300"
+            className="fixed w-full z-50 bg-dark-100/60 light:bg-white/90 backdrop-blur-sm py-4 px-4 sm:px-6 lg:px-8 shadow-lg light:shadow-sm transition-colors duration-300"
         >
             <div className="max-w-6xl mx-auto flex justify-between items-center">
                 <div className="flex items-center gap-2">
                     <a
                         href="#home"
-                        className="text-2xl sm:text-3xl font-bold text-white light:text-slate-900 flex items-center gap-1 transition-colors duration-300 outline-none focus:outline-none focus:ring-0"
+                        className="text-2xl sm:text-3xl font-bold text-white light:text-navy flex items-center gap-1 transition-colors duration-300 outline-none focus:outline-none focus:ring-0"
                     >
                         <span>
                             V
@@ -76,7 +76,7 @@ const Navbar = () => {
 
                 <div className="hidden md:flex space-x-10">
                     {navItems.map((item) => (
-                        <a key={item.href} href={item.href} className="relative text-white/80 light:text-slate-700 transition duration-300 hover:text-purple group">
+                        <a key={item.href} href={item.href} className="relative text-white/80 light:text-navy-soft transition duration-300 hover:text-purple group">
                             <span>{item.label}</span>
                             <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple transition-all duration-300 group-hover:w-full " ></span>
                         </a>
@@ -91,7 +91,7 @@ const Navbar = () => {
                         aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
                         className={`inline-flex items-center justify-center w-10 h-10 rounded-xl border transition-colors duration-300 ${
                             isLight
-                                ? "border-slate-300 bg-white text-slate-800 hover:bg-slate-100"
+                                ? "border-light-border bg-light-surface text-navy hover:bg-light-surface/70"
                                 : "border-white/20 bg-white/10 text-white hover:bg-white/20"
                         }`}
                     >
@@ -101,12 +101,12 @@ const Navbar = () => {
                     <div className="md:hidden">
                         {showMenu ? (
                             <FaXmark
-                                className="text-2xl cursor-pointer text-white light:text-slate-900 transition-colors duration-300"
+                                className="text-2xl cursor-pointer text-white light:text-navy transition-colors duration-300"
                                 onClick={() => setShowMenu(!showMenu)}
                             />
                         ) : (
                             <FaBars
-                                className="text-2xl cursor-pointer text-white light:text-slate-900 transition-colors duration-300"
+                                className="text-2xl cursor-pointer text-white light:text-navy transition-colors duration-300"
                                 onClick={() => setShowMenu(!showMenu)}
                             />
                         )}
@@ -122,10 +122,10 @@ const Navbar = () => {
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="md:hidden mt-4 bg-dark-300 light:bg-white rounded-lg p-4 flex flex-col space-y-4 text-center overflow-hidden max-h-[70vh] overflow-y-auto border border-white/5 light:border-slate-200 transition-colors duration-300"
+                            className="md:hidden mt-4 bg-dark-300 light:bg-light-card rounded-lg p-4 flex flex-col space-y-4 text-center overflow-hidden max-h-[70vh] overflow-y-auto border border-white/5 light:border-light-border transition-colors duration-300"
                         >
                             {navItems.map((item) => (
-                                <a key={item.href} onClick={() => setShowMenu(false)} href={item.href} className="relative text-white/80 light:text-slate-700 transition duration-300 hover:text-purple group text-xl">
+                                <a key={item.href} onClick={() => setShowMenu(false)} href={item.href} className="relative text-white/80 light:text-navy-soft transition duration-300 hover:text-purple group text-xl">
                                     <span>{item.label}</span>
                                 </a>
                             ))}

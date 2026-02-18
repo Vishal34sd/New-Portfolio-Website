@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="min-h-screen flex items-center pt-24 sm:pt-28 pb-14 sm:pb-16 bg-gradient-to-r from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a] light:from-slate-50 light:via-white light:to-slate-100 transition-colors duration-300"
+      className="min-h-screen flex items-center pt-24 sm:pt-28 pb-14 sm:pb-16 bg-dark-100 section-bg transition-colors duration-300"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between mt-6 sm:mt-10">
         <div className="w-full md:w-7/12 mb-10 md:mb-0">
@@ -42,10 +42,10 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-base sm:text-lg text-gray-300 light:text-slate-700 mb-10 sm:mb-12 leading-relaxed transition-colors duration-300"
+            className="text-base sm:text-lg text-gray-300 light:text-navy-soft mb-10 sm:mb-12 leading-relaxed transition-colors duration-300"
           >
             I’m a{" "}
-            <span className="text-white light:text-slate-900 font-semibold transition-colors duration-300">
+            <span className="text-white light:text-navy font-semibold transition-colors duration-300">
               Full Stack Developer
             </span>{" "}
             who builds modern, fast and interactive web apps using{" "}
@@ -56,7 +56,7 @@ const Hero = () => {
                   whileHover={{ scale: 1.08, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="group flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold bg-white/5 border-2 border-dotted border-white/20 text-white/90 hover:bg-purple/15 hover:border-purple/50 hover:text-purple transition duration-300
-                  light:bg-slate-100 light:border-slate-200 light:text-slate-800 light:hover:bg-purple/10"
+                  light:bg-light-surface light:border-light-border light:text-navy-soft light:hover:bg-purple/10 light:hover:text-purple"
                 >
                   <img
                     src={`https://skillicons.dev/icons?i=${tech.icon}`}
@@ -82,29 +82,26 @@ const Hero = () => {
             className="flex flex-col sm:flex-row sm:flex-wrap gap-4 mt-5"
           >
             <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.97 }}
               href="#project"
-              className="w-full sm:w-auto text-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-medium transition duration-300"
+              className="btn-3d w-full sm:w-auto text-center px-6 py-3 rounded-lg font-medium"
             >
               View Work
             </motion.a>
 
             <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.97 }}
               href="#contact"
-              className="w-full sm:w-auto text-center px-6 py-3 border border-purple rounded-lg font-medium hover:bg-purple/20 transition duration-300"
+              className="btn-3d-outline w-full sm:w-auto text-center px-6 py-3 rounded-lg font-medium"
             >
               Contact Me
             </motion.a>
 
             <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.97 }}
               href="/New_Resume_Vishal.pdf"
               download="Vishal_Dubey_Resume.pdf"
-              className="w-full sm:w-auto text-center px-6 py-3 border border-purple rounded-lg font-medium hover:bg-purple/20 transition duration-300"
+              className="btn-3d-outline w-full sm:w-auto text-center px-6 py-3 rounded-lg font-medium"
             >
               Download Resume
             </motion.a>

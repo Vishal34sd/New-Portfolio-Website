@@ -1,126 +1,148 @@
-import react from "react"
-import {motion} from "framer-motion"
-import { FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaTwitter, FaMapMarkerAlt } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaTwitter, FaMapMarkerAlt } from "react-icons/fa";
 
-const Contact = ()=>{
-    return(
-        <div
-        id = "contact"
-        className = "scroll-mt-28 py-16 sm:py-20 bg-dark-100 light:bg-slate-50 light:text-slate-900 transition-colors duration-300">
-            <div className="container mx-auto px-4 sm:px-6">
-                <motion.h2 
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className ="text-3xl font-bold text-center mb-4"
-                >
-                    Get In <span className ="text-purple">Touch</span>
-                </motion.h2>
-                <motion.p 
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className ="text-gray-400 light:text-slate-600 text-center max-w-2xl mx-auto mb-10 sm:mb-16 transition-colors duration-300"
-                >
-                    Have a project in mind or want to collabrate ? Let's talk 
-                </motion.p>
+const timelineItems = [
+  {
+    icon: FaMapMarkerAlt,
+    label: "Location",
+    value: "Ghaziabad, India",
+    href: null,
+  },
+  {
+    icon: FaEnvelope,
+    label: "Email",
+    value: "dubeyvishal714@gmail.com",
+    href: "mailto:dubeyvishal714@gmail.com",
+  },
+  {
+    icon: FaPhone,
+    label: "Phone",
+    value: "+91 9044160248",
+    href: "tel:+919044160248",
+  },
+];
 
-                <div className ="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                    {/*Contact form */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                    >
-                        <form className ="space-y-6">
-                            <div>
-                                <label htmlFor="name" className="block text-gray-300 light:text-slate-700 mb-2 transition-colors duration-300">Your Name</label>
-                                <input
-                                className ="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none focus:border-purple transition duration-300 light:bg-white light:border-slate-200" type="text"></input>
-                            </div>
+const socials = [
+  { icon: FaGithub, href: "https://github.com/Vishal34sd", label: "GitHub" },
+  { icon: FaLinkedin, href: "https://www.linkedin.com/in/vishal-dubey-478541320/", label: "LinkedIn" },
+  { icon: FaTwitter, href: "https://x.com/@VishalDube39123", label: "Twitter" },
+];
 
-                            <div>
-                                <label htmlFor="email" className="block text-gray-300 light:text-slate-700 mb-2 transition-colors duration-300">Email</label>
-                                <input
-                                className ="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none focus:border-purple transition duration-300 light:bg-white light:border-slate-200" type="text"></input>
-                            </div>
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.15, delayChildren: 0.3 },
+  },
+};
 
-                            <div>
-                                <label htmlFor="message" className="block text-gray-300 light:text-slate-700 mb-2 transition-colors duration-300">Your Message</label>
-                                <textarea
-                                className ="w-full h-40 bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none focus:border-purple transition duration-300 light:bg-white light:border-slate-200" type="text"></textarea>
-                            </div>
-                            <motion.button 
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                type ="submit" 
-                                className ="w-full px-6 py-3 bg-purple rounded-lg font-medium hover:bg-purple-700 transition duration cursor pointer"
-                            >
-                                Send
-                            </motion.button>
-                            
-                        </form>
-                    </motion.div>
+const itemVariants = {
+  hidden: { opacity: 0, x: -30 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
 
-                     {/*Contact info */}
-                     <motion.div 
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        className ="space-y-8 mt-10 ml-5"
-                    >
-                        <div className ="flex items-start">
-                            <div className ="text-purple text-2xl mr-4">
-                                <FaMapMarkerAlt/>
-                            </div>
-                            <div>
-                                <h3 className ="text-lg font-semibold mb-2">Location</h3>
-                                <p className="text-gray-400 light:text-slate-600 transition-colors duration-300">Ghaziabad, India</p>
-                            </div>
-                        </div>
+const Contact = () => {
+  return (
+    <div
+      id="contact"
+      className="scroll-mt-28 py-16 sm:py-24 bg-dark-100 section-bg light:text-navy transition-colors duration-300"
+    >
+      <div className="container mx-auto px-4 sm:px-6">
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold text-center mb-3"
+        >
+          Get In <span className="text-purple">Touch</span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="text-gray-400 light:text-navy-muted text-center max-w-xl mx-auto mb-14 transition-colors duration-300"
+        >
+          Have a project in mind or want to collaborate? Let's talk.
+        </motion.p>
 
-                        <div className ="flex items-start">
-                            <div className ="text-purple text-2xl mr-4">
-                                <FaEnvelope/>
-                            </div>
-                            <div>
-                                <h3 className ="text-lg font-semibold mb-2">Email</h3>
-                                <p className="text-gray-400 light:text-slate-600 transition-colors duration-300">dubeyvishal714@gmail.com</p>
-                            </div>
-                        </div>
+        {/* Timeline */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="relative max-w-lg mx-auto"
+        >
+          {/* Vertical line */}
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-purple/25 light:bg-purple/20" />
 
-                        <div className ="flex items-start">
-                            <div className ="text-purple text-2xl mr-4">
-                                <FaPhone/>
-                            </div>
-                            <div>
-                                <h3 className ="text-lg font-semibold mb-2">Phone</h3>
-                                <p className="text-gray-400 light:text-slate-600 transition-colors duration-300">+91 9044160248</p>
-                            </div>
-                        </div>
+          {timelineItems.map((item) => (
+            <motion.div
+              key={item.label}
+              variants={itemVariants}
+              className="relative flex items-start gap-6 pb-10 last:pb-0"
+            >
+              {/* Icon dot */}
+              <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-dark-300 light:bg-light-card border-2 border-purple/50 flex items-center justify-center text-purple shadow-[0_0_12px_rgba(139,92,246,0.2)]">
+                <item.icon className="text-lg" />
+              </div>
 
-                        <div className="pt-4">
-                            <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
-                            <div className="flex space-x-6">
-                                <a href="https://github.com/Vishal34sd" className="text-gray-400 light:text-slate-600 hover:text-purple transition duration-300 text-2xl">
-                                    <FaGithub />
-                                </a>
-                                <a href="https://www.linkedin.com/in/vishal-dubey-478541320/" className="text-gray-400 light:text-slate-600 hover:text-purple transition duration-300 text-2xl">
-                                    <FaLinkedin />
-                                </a>
-                                <a href="https://x.com/@VishalDube39123" className="text-gray-400 light:text-slate-600 hover:text-purple transition duration-300 text-2xl">
-                                    <FaTwitter />
-                                </a>
-                            </div>
-                        </div>
-                     </motion.div>
+              {/* Content */}
+              <div className="flex-1 pt-2 pb-1 border-b border-white/5 light:border-light-border">
+                <p className="text-xs uppercase tracking-widest text-purple/70 mb-1 font-medium">
+                  {item.label}
+                </p>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    className="text-base font-semibold text-white light:text-navy hover:text-purple light:hover:text-purple transition-colors duration-200"
+                  >
+                    {item.value}
+                  </a>
+                ) : (
+                  <p className="text-base font-semibold text-white light:text-navy">
+                    {item.value}
+                  </p>
+                )}
+              </div>
+            </motion.div>
+          ))}
 
-
-                </div>
-
+          {/* Socials timeline item */}
+          <motion.div
+            variants={itemVariants}
+            className="relative flex items-start gap-6 pt-10"
+          >
+            {/* Icon dot */}
+            <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-dark-300 light:bg-light-card border-2 border-purple/50 flex items-center justify-center text-purple shadow-[0_0_12px_rgba(139,92,246,0.2)]">
+              <FaGithub className="text-lg" />
             </div>
-        </div>
-    )
-}
 
-export default Contact ;
+            {/* Social links */}
+            <div className="flex-1 pt-2">
+              <p className="text-xs uppercase tracking-widest text-purple/70 mb-3 font-medium">
+                Connect
+              </p>
+              <div className="flex gap-4">
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={s.label}
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-dark-300 light:bg-light-surface border border-white/10 light:border-light-border text-gray-400 light:text-navy-muted hover:text-purple hover:border-purple/50 transition-all duration-200 text-lg"
+                  >
+                    <s.icon />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;

@@ -4,7 +4,6 @@ import { FaOm, FaRegCalendarAlt, FaQuoteLeft, FaLanguage } from "react-icons/fa"
 import { gitaQuotes } from "../assets/assets";
 
 const getDailyIndex = (length) => {
-  
   const today = new Date();
   const seed = Math.floor(
     (today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate()) / 1
@@ -45,8 +44,7 @@ const GitaQuote = () => {
   return (
     <section
       id="gita"
-      className="relative py-16 sm:py-24 bg-dark-200 text-white
-      light:bg-linear-to-br light:from-slate-50 light:via-white light:to-purple-50 light:text-slate-900
+      className="relative py-16 sm:py-24 bg-dark-200 text-white section-bg-alt light:text-navy
       overflow-hidden transition-colors duration-300"
     >
       {/* Background Spiritual Glow */}
@@ -67,7 +65,7 @@ const GitaQuote = () => {
           <h2 className="text-3xl font-bold leading-tight">
             A <span className="text-purple">Gita Quote</span> for Your Day
           </h2>
-          <p className="mt-3 text-gray-400 light:text-slate-600 max-w-2xl mx-auto transition-colors duration-300">
+          <p className="mt-3 text-gray-400 light:text-navy-muted max-w-2xl mx-auto transition-colors duration-300">
             Ending with peace ✨ A daily reminder from the Bhagavad Gita.
           </p>
         </motion.div>
@@ -78,9 +76,9 @@ const GitaQuote = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.75, type: "spring" }}
-          className="relative max-w-4xl mx-auto rounded-2xl 
+          className="relative max-w-4xl mx-auto rounded-2xl
           bg-dark-300/60 backdrop-blur-xl shadow-xl p-6 md:p-10 overflow-hidden
-          light:bg-white/80 light:border light:border-slate-200 light:shadow-[0_20px_60px_-20px_rgba(2,6,23,0.15)]
+          light:bg-light-card light:border light:border-light-border card-pro
           transition-colors duration-300"
         >
           {/* Card glow */}
@@ -92,12 +90,12 @@ const GitaQuote = () => {
           {/* Top row */}
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-4 mb-3">
             <div className="flex items-center gap-3">
-              <span className="p-3 rounded-xl border border-white/10 bg-dark-400/40 light:border-slate-200 light:bg-slate-100/70 transition-colors duration-300">
+              <span className="p-3 rounded-xl border border-white/10 bg-dark-400/40 light:border-light-border light:bg-light-surface transition-colors duration-300">
                 <FaOm className="text-purple text-2xl" />
               </span>
               <div>
-                <p className="text-white light:text-slate-900 font-bold text-lg transition-colors duration-300">Today’s Wisdom</p>
-                <p className="text-gray-400 light:text-slate-600 text-sm flex items-center gap-2 transition-colors duration-300">
+                <p className="text-white light:text-navy font-bold text-lg transition-colors duration-300">Today's Wisdom</p>
+                <p className="text-gray-400 light:text-navy-muted text-sm flex items-center gap-2 transition-colors duration-300">
                   <FaRegCalendarAlt className="text-xs" />
                   {todayString}
                 </p>
@@ -105,8 +103,8 @@ const GitaQuote = () => {
             </div>
 
             {/* Language Toggle */}
-            <div className="flex items-center gap-2 bg-black/30 light:bg-white/90 border border-white/10 light:border-slate-200 rounded-4xl p-1 transition-colors duration-300">
-              <span className="px-3 text-gray-300 light:text-slate-700 text-sm flex items-center gap-2 transition-colors duration-300">
+            <div className="flex items-center gap-2 bg-black/30 light:bg-light-surface border border-white/10 light:border-light-border rounded-4xl p-1 transition-colors duration-300">
+              <span className="px-3 text-gray-300 light:text-navy-soft text-sm flex items-center gap-2 transition-colors duration-300">
                 <FaLanguage /> Language
               </span>
 
@@ -114,8 +112,8 @@ const GitaQuote = () => {
                 onClick={() => setLang("en")}
                 className={`px-3 py-1 rounded-4xl text-sm font-semibold transition ${
                   lang === "en"
-                    ? "bg-purple/25 border border-purple/30 text-white light:text-slate-900 light:bg-purple/20"
-                    : "text-gray-300 light:text-slate-700 hover:bg-white/5 light:hover:bg-slate-200/60"
+                    ? "bg-purple/25 border border-purple/30 text-white light:text-navy light:bg-purple/20"
+                    : "text-gray-300 light:text-navy-soft hover:bg-white/5 light:hover:bg-light-border/60"
                 }`}
               >
                 English
@@ -125,8 +123,8 @@ const GitaQuote = () => {
                 onClick={() => setLang("hi")}
                 className={`px-3 py-1 rounded-4xl text-sm font-semibold transition ${
                   lang === "hi"
-                    ? "bg-purple/25 border border-purple/30 text-white light:text-slate-900 light:bg-purple/20"
-                    : "text-gray-300 light:text-slate-700 hover:bg-white/5 light:hover:bg-slate-200/60"
+                    ? "bg-purple/25 border border-purple/30 text-white light:text-navy light:bg-purple/20"
+                    : "text-gray-300 light:text-navy-soft hover:bg-white/5 light:hover:bg-light-border/60"
                 }`}
               >
                 हिन्दी
@@ -149,12 +147,12 @@ const GitaQuote = () => {
             </p>
 
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-              <span className="text-sm text-gray-400 light:text-slate-600 transition-colors duration-300">
-                — Bhagavad Gita <span className="text-white/80 light:text-slate-900 font-semibold transition-colors duration-300">({quote.verse})</span>
+              <span className="text-sm text-gray-400 light:text-navy-muted transition-colors duration-300">
+                — Bhagavad Gita <span className="text-white/80 light:text-navy font-semibold transition-colors duration-300">({quote.verse})</span>
               </span>
 
               <span className="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-gray-500 text-white
-              light:bg-slate-100 light:border-slate-200 light:text-slate-800 transition-colors duration-300">
+              light:bg-light-surface light:border-light-border light:text-navy-soft transition-colors duration-300">
                 {quote.vibe}
               </span>
             </div>
@@ -169,7 +167,7 @@ const GitaQuote = () => {
               className="px-6 py-2 rounded-xl font-semibold text-white
               bg-linear-to-r from-purple-500 to-pink-500
               shadow-lg shadow-purple/25 hover:opacity-95 transition
-              light:bg-none light:bg-purple/15 light:text-slate-900 light:border light:border-purple/25 light:shadow-none"
+              light:bg-none light:bg-purple/15 light:text-navy light:border light:border-purple/25 light:shadow-none"
             >
               New Quote
             </motion.button>
@@ -180,9 +178,9 @@ const GitaQuote = () => {
               onClick={copyQuote}
               className="px-6 py-2 rounded-xl font-semibold text-white/90
               bg-white/5 border border-white/10 hover:bg-white/10 transition
-              light:bg-slate-100 light:border-slate-200 light:text-slate-800 light:hover:bg-slate-200/60"
+              light:bg-light-surface light:border-light-border light:text-navy-soft light:hover:bg-light-border/60"
             >
-              Copy Quote 
+              Copy Quote
             </motion.button>
           </div>
 
@@ -192,9 +190,9 @@ const GitaQuote = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative mt-8 text-center text-gray-400 light:text-slate-600 text-sm transition-colors duration-300"
+            className="relative mt-8 text-center text-gray-400 light:text-navy-muted text-sm transition-colors duration-300"
           >
-            May your mind be calm, your actions be fearless, and your journey be divine 
+            May your mind be calm, your actions be fearless, and your journey be divine
           </motion.p>
         </motion.div>
       </div>

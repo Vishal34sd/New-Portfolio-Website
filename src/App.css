@@ -23,10 +23,19 @@ html {
     --color-dark-100: #1a1a1a;
     --color-dark-200: #1f1f1f;
     --color-dark-300: #2d2d2d;
-    --color-dark-400: #3d3a3d; 
+    --color-dark-400: #3d3a3d;
     --color-purple: #8B5CF6;
     --color-pink: #EC4899;
     --color-blue: #3B82F6;
+
+    /* Professional Light Mode Palette */
+    --color-light-bg: #F5F7FF;       /* Primary bg — barely-blue white */
+    --color-light-surface: #EBF0FF;  /* Alternate section bg — indigo-50 tone */
+    --color-light-card: #FFFFFF;     /* Card / elevated surfaces */
+    --color-navy: #0C1835;           /* Primary text — deep navy */
+    --color-navy-soft: #354165;      /* Secondary text */
+    --color-navy-muted: #5D6B8A;     /* Muted / caption text */
+    --color-light-border: #C8D2EC;   /* Indigo-tinted border */
 }
 
 .typewriter-loop {
@@ -211,4 +220,67 @@ html {
   body {
     @apply bg-background text-foreground;
     }
+}
+
+/* 3D Button Styles */
+.btn-3d {
+  background-color: #8B5CF6;
+  color: white;
+  box-shadow: 0 5px 0 0 #5b21b6;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  position: relative;
+}
+.btn-3d:hover {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 0 #5b21b6;
+}
+.btn-3d:active {
+  transform: translateY(5px);
+  box-shadow: 0 0px 0 0 #5b21b6;
+}
+
+.btn-3d-outline {
+  background-color: transparent;
+  border: 1.5px solid #8B5CF6;
+  box-shadow: 0 5px 0 0 #5b21b6;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.btn-3d-outline:hover {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 0 #5b21b6;
+  background-color: rgba(139, 92, 246, 0.1);
+}
+.btn-3d-outline:active {
+  transform: translateY(5px);
+  box-shadow: 0 0px 0 0 #5b21b6;
+}
+
+.light .btn-3d-outline {
+  border-color: #7C3AED;
+  color: #5B21B6;
+  box-shadow: 0 5px 0 0 #4C1D95;
+}
+.light .btn-3d-outline:hover {
+  background-color: rgba(124, 58, 237, 0.08);
+}
+
+/* ── Light-mode professional card elevation ── */
+.light .card-pro {
+  box-shadow:
+    0 1px 3px rgba(12, 24, 53, 0.04),
+    0 6px 24px rgba(79, 70, 229, 0.08),
+    0 0 0 1px rgba(200, 210, 236, 0.6);
+}
+
+/* ── Light-mode navbar bottom separator ── */
+.light nav {
+  border-bottom: 1px solid rgba(200, 210, 236, 0.55);
+}
+
+/* ── Section gradient backgrounds for light mode ── */
+.light .section-bg {
+  background: linear-gradient(150deg, #F5F7FF 0%, #EDF1FF 100%);
+}
+.light .section-bg-alt {
+  background: linear-gradient(150deg, #EBF0FF 0%, #E3E9FF 100%);
 }

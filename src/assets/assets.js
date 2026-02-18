@@ -84,8 +84,8 @@ export const projects = [
   image: "/orbital.png",
   tech: ["Next.js", "Tailwind CSS", "Node.js", "Express.js"],
   iconKeys: ["nextjs", "tailwind", "nodejs", "express", "ai"],
-  demo: "https://your-demo-link.vercel.app",
-  code: "https://github.com/Vishal34sd/your-orbital-cli-repo",
+  demo: "https://smart-cli-based-agent-t7x4.vercel.app/",
+  code: "https://github.com/Vishal34sd/Smart-CLI-Based-Agent",
 }
 ,
   {
