@@ -3,6 +3,9 @@ import { FaBars } from "react-icons/fa6";
 import { FaXmark } from "react-icons/fa6";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import { Badge  } from "@/components/ui/badge"
+import { BadgeCheck } from "lucide-react"
+
 
 const Navbar = () => {
 
@@ -14,7 +17,7 @@ const Navbar = () => {
         { label: "Contact", href: "#contact" },
     ];
 
-    const [showMenu , setShowMenu] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
     const [isLight, setIsLight] = useState(false);
 
     useEffect(() => {
@@ -42,23 +45,35 @@ const Navbar = () => {
     };
 
     return (
-        <motion.nav 
+        <motion.nav
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="fixed w-full z-50 bg-dark-100/60 light:bg-white/70 backdrop-blur-sm py-4 px-4 sm:px-6 lg:px-8 shadow-lg light:shadow-md transition-colors duration-300"
         >
             <div className="max-w-6xl mx-auto flex justify-between items-center">
-                <div>
-                    <a href="#home" className="text-2xl sm:text-3xl font-bold text-white light:text-slate-900 flex items-center gap-2 transition-colors duration-300">
+                <div className="flex items-center gap-2">
+                    <a
+                        href="#home"
+                        className="text-2xl sm:text-3xl font-bold text-white light:text-slate-900 flex items-center gap-1 transition-colors duration-300 outline-none focus:outline-none focus:ring-0"
+                    >
                         <span>
-                          Vishal
-                          <span className="text-purple">Dubey</span>
+                            V
+                            <span className="text-purple">D</span>
                         </span>
                         <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-purple rounded-full" />
                     </a>
 
+                    <Badge
+                        variant="secondary"
+                        className="border-0 ring-0 shadow-none focus:outline-none focus:ring-0 text-blue-700"
+                    >
+                        <BadgeCheck data-icon="inline-start" />
+                        Verified
+                    </Badge>
                 </div>
+
+
                 <div className="hidden md:flex space-x-10">
                     {navItems.map((item) => (
                         <a key={item.href} href={item.href} className="relative text-white/80 light:text-slate-700 transition duration-300 hover:text-purple group">
@@ -74,10 +89,11 @@ const Navbar = () => {
                         type="button"
                         onClick={toggleTheme}
                         aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
-                        className="inline-flex items-center justify-center w-10 h-10 rounded-xl
-                        border border-white/10 bg-dark-300/50 text-white/90 hover:bg-dark-300/80
-                        light:border-slate-200 light:bg-white/70 light:text-slate-800 light:hover:bg-slate-100
-                        transition-colors duration-300"
+                        className={`inline-flex items-center justify-center w-10 h-10 rounded-xl border transition-colors duration-300 ${
+                            isLight
+                                ? "border-slate-300 bg-white text-slate-800 hover:bg-slate-100"
+                                : "border-white/20 bg-white/10 text-white hover:bg-white/20"
+                        }`}
                     >
                         {isLight ? <FiMoon className="text-lg" /> : <FiSun className="text-lg" />}
                     </button>
@@ -99,23 +115,23 @@ const Navbar = () => {
             </div>
 
             <AnimatePresence>
-            {
-               showMenu && (
-                <motion.div 
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className ="md:hidden mt-4 bg-dark-300 light:bg-white rounded-lg p-4 flex flex-col space-y-4 text-center overflow-hidden max-h-[70vh] overflow-y-auto border border-white/5 light:border-slate-200 transition-colors duration-300"
-                >
-                    {navItems.map((item) => (
-                        <a key={item.href} onClick = {()=>setShowMenu(false)} href={item.href} className="relative text-white/80 light:text-slate-700 transition duration-300 hover:text-purple group text-xl">
-                            <span>{item.label}</span>
-                        </a>
-                    ))}
-                </motion.div>
-               ) 
-            }
+                {
+                    showMenu && (
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="md:hidden mt-4 bg-dark-300 light:bg-white rounded-lg p-4 flex flex-col space-y-4 text-center overflow-hidden max-h-[70vh] overflow-y-auto border border-white/5 light:border-slate-200 transition-colors duration-300"
+                        >
+                            {navItems.map((item) => (
+                                <a key={item.href} onClick={() => setShowMenu(false)} href={item.href} className="relative text-white/80 light:text-slate-700 transition duration-300 hover:text-purple group text-xl">
+                                    <span>{item.label}</span>
+                                </a>
+                            ))}
+                        </motion.div>
+                    )
+                }
             </AnimatePresence>
         </motion.nav>
     )
