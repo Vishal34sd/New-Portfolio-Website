@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { skills } from "../assets/assets.js";
 
-/* ✅ SkillIcons.dev URL generator */
 const iconUrl = (key) => `https://skillicons.dev/icons?i=${key}`;
 
 const containerVariants = {
@@ -20,9 +19,11 @@ const cardVariants = {
 
 const Skills = () => {
   return (
-    <section id="skills" className="scroll-mt-28 py-16 sm:py-20 bg-dark-100 text-white section-bg light:text-navy transition-colors duration-300">
+    <section
+      id="skills"
+      className="scroll-mt-28 py-16 sm:py-20 bg-dark-100 text-white light:bg-light-bg light:text-navy transition-colors duration-300"
+    >
       <div className="container mx-auto px-4 sm:px-6">
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,92 +34,44 @@ const Skills = () => {
           <h2 className="text-3xl font-bold">
             My <span className="text-purple">Skills</span>
           </h2>
-          <p className="mt-3 text-gray-400 light:text-navy-muted text-center max-w-2xl mx-auto transition-colors duration-300">
-            Technologies I use to build scalable applications, craft smooth user
-            experiences, and ship high-quality projects.
-          </p>
         </motion.div>
 
-        {/* Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
+          className="flex flex-col gap-12 max-w-4xl mx-auto"
         >
           {skills.map((skill, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
-              whileHover={{ y: -10 }}
-              transition={{ type: "spring", stiffness: 240 }}
-              className="relative overflow-hidden rounded-2xl p-6 cursor-pointer
-              bg-dark-300/60 border border-white/5 backdrop-blur-xl shadow-xl group
-              light:bg-light-card light:border-light-border card-pro transition-colors duration-300"
+              className="flex flex-col items-center text-center"
             >
-              {/* Hover Glow */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
-                <div className="absolute -top-16 -left-16 w-52 h-52 bg-purple/20 blur-3xl rounded-full" />
-                <div className="absolute -bottom-16 -right-16 w-52 h-52 bg-purple/10 blur-3xl rounded-full" />
-              </div>
+              <h3 className="text-xl font-semibold mb-6 text-gray-200 light:text-navy-soft">
+                {skill.title}
+              </h3>
 
-              <div className="relative">
-                {/* Title + Icon */}
-                <div className="flex items-center mb-4">
-
+              <div className="flex flex-wrap justify-center gap-6">
+                {(skill.tags || []).map((tag) => (
                   <motion.div
-                    whileHover={{ rotate: 8, scale: 1.15 }}
-                    transition={{ type: "spring", stiffness: 250 }}
-                    className="mr-5"
+                    key={tag.name}
+                    whileHover={{ y: -6, scale: 1.08 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="flex flex-col items-center gap-2"
                   >
                     <img
-                      src={iconUrl(skill.iconKey)}
-                      alt={skill.title}
-                      className="w-12 h-12 drop-shadow-[0_0_12px_rgba(168,85,247,0.7)]"
+                      src={iconUrl(tag.iconKey)}
+                      alt={tag.name}
+                      className="w-14 h-14 md:w-16 md:h-16 drop-shadow-lg"
                       loading="lazy"
                     />
-                  </motion.div>
-
-                  <div>
-                    <h3 className="text-xl font-semibold mb-12 mt-10">{skill.title}</h3>
-
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="mb-5 text-gray-300 light:text-navy-soft leading-relaxed transition-colors duration-300">
-                  {skill.description ||
-                    "I use these skills to design, build, and deliver reliable applications with clean architecture and strong performance."}
-                </p>
-
-
-                <div className="flex flex-wrap gap-2">
-                  {(skill.tags || []).map((tag) => (
-                    <motion.span
-                      key={tag.name}
-                      whileHover={{ scale: 1.08 }}
-                      transition={{ type: "spring", stiffness: 260 }}
-                      className="flex items-center gap-2 px-3 py-1 rounded-full text-sm
-                      bg-dark-400/60 border border-white/5 text-gray-200
-                      light:bg-light-surface light:border-light-border light:text-navy-soft
-                      hover:bg-purple/20 hover:border-purple/30 transition duration-300"
-                    >
-                      <img
-                        src={iconUrl(tag.iconKey)}
-                        alt={tag.name}
-                        className="w-5 h-5"
-                        loading="lazy"
-                      />
+                    <span className="text-sm font-medium text-gray-400 light:text-navy-muted">
                       {tag.name}
-                    </motion.span>
-                  ))}
-                </div>
-
-                {/* Bottom Line */}
-                <div className="mt-6 h-0.5 w-full overflow-hidden bg-white/5 light:bg-light-border/50 rounded-full transition-colors duration-300">
-                  <div className="h-full w-1/3 bg-purple/60 blur-sm animate-pulse" />
-                </div>
+                    </span>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           ))}

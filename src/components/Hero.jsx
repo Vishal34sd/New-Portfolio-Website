@@ -73,7 +73,7 @@ const Hero = () => {
           </motion.p>
 
           <div className="flex justify-center md:justify-start">
-            <ConnectNavbar/>
+            <ConnectNavbar />
           </div>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -99,7 +99,7 @@ const Hero = () => {
 
             <motion.a
               whileTap={{ scale: 0.97 }}
-              href="/New_Resume_Vishal.pdf"
+              href="/final_resume_vishal.pdf"
               download="Vishal_Dubey_Resume.pdf"
               className="btn-3d-outline w-full sm:w-auto text-center px-6 py-3 rounded-lg font-medium"
             >
@@ -108,18 +108,22 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <div className="w-full md:w-5/12 flex justify-center">
+        <div className="w-full md:w-5/12 flex justify-center perspective-1000">
           <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple to-pink opacity-70"></div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple to-pink opacity-70 pointer-events-none"></div>
 
             <motion.img
+              id="profile-pic"
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              animate={{ y: [0, -20, 0] }}
-              className="relative rounded-full w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover z-10"
+              drag
+              dragSnapToOrigin={true}
+              whileDrag={{ scale: 1.1, cursor: "grabbing" }}
+              className="relative rounded-full w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover z-50 cursor-grab"
               src="/bio_pic_2.png"
               alt="image-logo"
+              title="Drag me around!"
             />
           </div>
         </div>

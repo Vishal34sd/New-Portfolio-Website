@@ -73,22 +73,14 @@ const GithubActivity = () => {
           </p>
         </motion.div>
 
-        {/* Card */}
+        {/* Flat Content */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, type: "spring" }}
-          className="relative overflow-hidden rounded-2xl border border-white/5
-          bg-dark-300/60 backdrop-blur-xl shadow-xl p-6 md:p-8
-          max-w-6xl mx-auto
-          light:border-light-border light:bg-light-card card-pro transition-colors duration-300"
+          transition={{ duration: 0.5 }}
+          className="max-w-5xl mx-auto"
         >
-          {/* Glow */}
-          <div className="absolute inset-0 pointer-events-none opacity-40">
-            <div className="absolute -top-20 -left-20 h-60 w-60 rounded-full bg-purple/20 blur-3xl"></div>
-            <div className="absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-purple/10 blur-3xl"></div>
-          </div>
 
           {/* Header - Center aligned */}
           <div className="relative flex flex-col items-center justify-center gap-5 mb-10 text-center">
@@ -149,10 +141,10 @@ const GithubActivity = () => {
             </div>
           </div>
 
-          {/* Calendar */}
-          <div className="relative flex justify-center">
-            <div className="w-full overflow-x-auto rounded-xl border border-white/5 bg-black/50 p-5 light:border-light-border light:bg-light-bg transition-colors duration-300">
-              <div className="flex justify-center min-w-[900px] md:min-w-full">
+          {/* Calendar Wrap */}
+          <div className="relative flex justify-center mt-6">
+            <div className="w-full max-w-full overflow-hidden flex justify-center">
+              <div className="transform scale-[0.6] sm:scale-75 md:scale-100 origin-top">
                 <GitHubCalendar
                   username={username}
                   theme={theme}
@@ -160,8 +152,8 @@ const GithubActivity = () => {
                   showWeekdayLabels={false}
                   hideColorLegend={false}
                   hideMonthLabels={false}
-                  fontSize={13}
-                  blockSize={14}
+                  fontSize={14}
+                  blockSize={12}
                   blockMargin={4}
                 />
               </div>
@@ -171,7 +163,7 @@ const GithubActivity = () => {
           {/* Footer center */}
           <div className="relative mt-8 flex flex-col items-center justify-center gap-3 text-center">
             <p className="text-gray-400 light:text-navy-muted text-sm transition-colors duration-300">
-               I build real-world projects & ship consistently.
+              I build real-world projects & ship consistently.
             </p>
 
             <motion.a

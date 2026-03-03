@@ -1,6 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { FaHeadphones, FaFilm, FaHeart, FaPlay } from "react-icons/fa";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaHeadphones, FaFilm, FaHeart, FaPlay, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const seriesList = [
     {
@@ -37,16 +37,8 @@ const seriesList = [
     },
 ];
 
-
-// Spotify tracks/playlists — you can change these anytime
+// Spotify tracks/playlists
 const spotifyEmbeds = [
-    {
-        title: "Arijit Singh — Soul Mode",
-        subtitle: "Lo-fi + Love + Pain",
-        embedUrl:
-            "https://open.spotify.com/embed/playlist/37i9dQZF1DWXtlo6ENS92N?utm_source=generator",
-        icon: <FaHeart />,
-    },
     {
         title: "Tailwinder Vibes ⚡",
         subtitle: "Code + Coffee + Flow",
@@ -71,35 +63,15 @@ const item = {
 };
 
 const Hobbies = () => {
+    const [showAllSeries, setShowAllSeries] = useState(false);
+
+    // Determine the list to display based on state
+    const visibleSeries = showAllSeries ? seriesList : seriesList.slice(0, 2);
+
     return (
-        <section id="hobbies" className="scroll-mt-28 py-16 sm:py-24 bg-dark-200 text-white section-bg-alt light:text-navy relative overflow-hidden transition-colors duration-300">
-            {/* Ambient background */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-40" />
-                <div className="absolute -bottom-48 -right-40 w-[620px] h-[620px] rounded-full blur-3xl opacity-40" />
-            </div>
-
-            {/* Sparkle dots */}
-            <div className="absolute inset-0 pointer-events-none opacity-25">
-                {Array.from({ length: 24 }).map((_, i) => (
-                    <motion.span
-                        key={i}
-                        className="absolute w-1 h-1 rounded-full bg-white/60"
-                        style={{
-                            left: `${(i * 7) % 100}%`,
-                            top: `${(i * 13) % 100}%`,
-                        }}
-                        animate={{ opacity: [0.2, 0.9, 0.2] }}
-                        transition={{
-                            duration: 2.2 + (i % 5) * 0.6,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        }}
-                    />
-                ))}
-            </div>
-
+        <section id="hobbies" className="scroll-mt-28 py-16 sm:py-24 bg-dark-100 text-white light:bg-light-bg light:text-navy transition-colors duration-300">
             <div className="container mx-auto px-4 sm:px-6 relative">
+
                 {/* Heading */}
                 <motion.div
                     initial={{ opacity: 0, y: -16 }}
@@ -117,126 +89,109 @@ const Hobbies = () => {
                     </p>
                 </motion.div>
 
-                {/* Main grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    {/* LEFT: Web series */}
+                {/* Main stack */}
+                <div className="flex flex-col gap-12 lg:gap-16 max-w-4xl mx-auto">
+
+                    {/* TOP: Web series */}
                     <motion.div
                         variants={container}
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className="relative rounded-2xl border border-white/5 bg-dark-300/60 backdrop-blur-xl shadow-xl p-6 md:p-8 overflow-hidden light:border-light-border light:bg-light-card card-pro transition-colors duration-300"
+                        className="flex flex-col"
                     >
-                        {/* Glow */}
-                        <div className="absolute inset-0 pointer-events-none opacity-40">
-                            <div className="absolute -top-20 -left-20 h-64 w-64 rounded-full blur-3xl" />
-                            <div className="absolute -bottom-24 -right-16 h-72 w-72 rounded-full  blur-3xl" />
-                        </div>
-
-                        <div className="relative flex items-center justify-between gap-4 mb-6">
-                            <div className="flex items-center gap-3">
-                                <span className="p-3 rounded-xl border border-white/10 bg-dark-400/40">
-                                    <FaFilm className="text-purple text-xl" />
-                                </span>
-                                <div>
-                                    <h3 className="text-xl md:text-2xl font-bold">Web Series I Love</h3>
-                                    <p className="text-gray-400 light:text-navy-muted text-sm transition-colors duration-300">Dark vibes. Plot twists. Goosebumps.</p>
-                                </div>
-                            </div>
-
-                            <span className="text-xs px-3 py-2 rounded-xl bg-purple/15 border border-purple/25 text-purple font-semibold">
-                                binge-mode ON
+                        <div className="flex items-center gap-3 mb-8">
+                            <span className="p-3 rounded-xl bg-dark-400/40 light:bg-light-surface text-purple text-xl shadow-sm">
+                                <FaFilm />
                             </span>
+                            <div>
+                                <h3 className="text-xl md:text-2xl font-bold">Web Series I Love</h3>
+                                <p className="text-gray-400 light:text-navy-muted text-sm transition-colors duration-300">Dark vibes. Plot twists. Goosebumps.</p>
+                            </div>
                         </div>
 
-                        {/* Series cards */}
-                        <div className="relative grid sm:grid-cols-2 gap-5">
-                            {seriesList.map((s, idx) => (
-                                <motion.div
-                                    key={s.title}
-                                    variants={item}
-                                    whileHover={{ y: -6, scale: 1.02 }}
-                                    transition={{ type: "spring", stiffness: 260, damping: 16 }}
-                                    className="group relative rounded-2xl overflow-hidden border border-white/10 bg-black/40 light:border-light-border light:bg-light-surface transition-colors duration-300"
-                                    style={{
-                                        boxShadow: `0 0 40px ${s.glow}`,
-                                    }}
-                                >
-                                    {/* Image */}
-                                    <div className="relative h-44">
-                                        <img
-                                            src={s.img}
-                                            alt={s.title}
-                                            className="w-full h-full object-cover transition"
-                                            loading="lazy"
-                                        />
-                                        {/* Overlay gradient */}
-                                        <div
-                                            className={`absolute inset-0 bg-linear-to-tr ${s.accent}`}
-                                        />
-                                        {/* Floating play */}
-                                        <motion.div
-                                            initial={{ opacity: 0, scale: 0.9 }}
-                                            whileHover={{ opacity: 1, scale: 1 }}
-                                            className="absolute top-4 right-4"
-                                        >
-                                            <span className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-black/50 border border-white/20 backdrop-blur-md">
-                                                <FaPlay className="text-white text-sm" />
-                                            </span>
-                                        </motion.div>
-                                    </div>
-
-                                    {/* Text */}
-                                    <div className="p-4">
-                                        <h4 className="font-extrabold text-lg tracking-tight">{s.title}</h4>
-                                        <p className="text-gray-400 light:text-navy-muted text-sm mt-1 transition-colors duration-300">{s.tag}</p>
-
-                                        <div className="mt-4 flex items-center justify-between">
-                                            <span className="text-xs text-gray-300 light:text-navy-soft bg-white/5 light:bg-light-card border border-amber-200 px-3 py-1.5 rounded-full transition-colors duration-300">
-                                                Rewatch-worthy
-                                            </span>
-                                            <span className={`text-xs font-semibold ${s.moodColor} border border-amber-300 rounded-3xl p-1`}>
-                                                {s.mood}
-                                            </span>
+                        {/* Series List Container */}
+                        <div className="relative grid sm:grid-cols-2 lg:grid-cols-2 gap-5 mb-5 layout-transition">
+                            <AnimatePresence>
+                                {visibleSeries.map((s) => (
+                                    <motion.div
+                                        layout
+                                        key={s.title}
+                                        variants={item}
+                                        initial="hidden"
+                                        animate="show"
+                                        exit={{ opacity: 0, scale: 0.9 }}
+                                        whileHover={{ y: -6, scale: 1.02 }}
+                                        transition={{ type: "spring", stiffness: 260, damping: 16 }}
+                                        className="group relative rounded-2xl overflow-hidden border border-white/5 bg-black/40 light:border-light-border light:bg-light-surface shadow-md transition-colors duration-300"
+                                    >
+                                        {/* Image */}
+                                        <div className="relative h-44">
+                                            <img
+                                                src={s.img}
+                                                alt={s.title}
+                                                className="w-full h-full object-cover transition"
+                                                loading="lazy"
+                                            />
+                                            {/* Overlay gradient */}
+                                            <div className={`absolute inset-0 bg-gradient-to-tr ${s.accent}`} />
+                                            {/* Floating play */}
+                                            <motion.div
+                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                whileHover={{ opacity: 1, scale: 1 }}
+                                                className="absolute top-4 right-4"
+                                            >
+                                                <span className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-black/50 border border-white/20 backdrop-blur-md">
+                                                    <FaPlay className="text-white text-sm" />
+                                                </span>
+                                            </motion.div>
                                         </div>
-                                    </div>
 
-
-                                </motion.div>
-                            ))}
+                                        {/* Text */}
+                                        <div className="p-4">
+                                            <h4 className="font-extrabold text-lg tracking-tight">{s.title}</h4>
+                                            <p className="text-gray-400 light:text-navy-muted text-sm mt-1 mb-4 transition-colors duration-300">{s.tag}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </AnimatePresence>
                         </div>
+
+                        {/* Show More/Less Button */}
+                        {seriesList.length > 2 && (
+                            <motion.button
+                                layout
+                                onClick={() => setShowAllSeries(!showAllSeries)}
+                                className="self-center mt-2 px-6 py-2 rounded-full border border-purple/40 text-purple text-sm font-semibold flex items-center gap-2 hover:bg-purple/10 transition-colors"
+                            >
+                                {showAllSeries ? (
+                                    <>Show Less <FaChevronUp className="text-xs" /></>
+                                ) : (
+                                    <>Show More <FaChevronDown className="text-xs" /></>
+                                )}
+                            </motion.button>
+                        )}
+
                     </motion.div>
 
-                    {/* RIGHT: Spotify */}
+                    {/* BOTTOM: Spotify */}
                     <motion.div
                         variants={container}
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className="relative rounded-2xl border border-white/5 bg-dark-300/60 backdrop-blur-xl shadow-xl p-6 md:p-8 overflow-hidden light:border-light-border light:bg-light-card card-pro transition-colors duration-300"
+                        className="flex flex-col"
                     >
-                        {/* Glow */}
-                        <div className="absolute inset-0 pointer-events-none opacity-40">
-                            <div className="absolute -top-24 -right-16 h-72 w-72 rounded-full  blur-3xl" />
-                            <div className="absolute -bottom-24 -left-20 h-80 w-80 rounded-full  blur-3xl" />
-                        </div>
-
-                        <div className="relative flex items-center justify-between gap-4 mb-6">
-                            <div className="flex items-center gap-3">
-                                <span className="p-3 rounded-xl border border-white/10 bg-dark-400/40">
-                                    <FaHeadphones className="text-purple text-xl" />
-                                </span>
-                                <div>
-                                    <h3 className="text-xl md:text-2xl font-bold">Spotify Vibes</h3>
-                                    <p className="text-gray-400 light:text-navy-muted text-sm transition-colors duration-300">
-                                        I code better when music is loud in my head 🎧
-                                    </p>
-                                </div>
-                            </div>
-
-                            <span className="text-xs px-3 py-2 rounded-xl bg-green-500/10 border border-green-500/20 text-green-300 font-semibold">
-                                now playing
+                        <div className="flex items-center gap-3 mb-8">
+                            <span className="p-3 rounded-xl bg-dark-400/40 light:bg-light-surface text-purple text-xl shadow-sm">
+                                <FaHeadphones />
                             </span>
+                            <div>
+                                <h3 className="text-xl md:text-2xl font-bold">Spotify Vibes</h3>
+                                <p className="text-gray-400 light:text-navy-muted text-sm transition-colors duration-300">
+                                    I code better when music is loud in my head 🎧
+                                </p>
+                            </div>
                         </div>
 
                         <div className="relative space-y-6">
@@ -246,7 +201,7 @@ const Hobbies = () => {
                                     variants={item}
                                     whileHover={{ y: -5 }}
                                     transition={{ type: "spring", stiffness: 250, damping: 16 }}
-                                    className="rounded-2xl border border-white/10 bg-black/40 overflow-hidden light:border-light-border light:bg-light-surface transition-colors duration-300"
+                                    className="rounded-2xl border border-white/5 bg-black/40 overflow-hidden light:border-light-border light:bg-light-surface shadow-md transition-colors duration-300"
                                 >
                                     {/* header */}
                                     <div className="flex items-center gap-3 p-4 border-b border-white/5 light:border-light-border transition-colors duration-300">
@@ -258,15 +213,11 @@ const Hobbies = () => {
                                             <h4 className="font-bold text-base">{song.title}</h4>
                                             <p className="text-xs text-gray-400 light:text-navy-muted transition-colors duration-300">{song.subtitle}</p>
                                         </div>
-
-                                        <span className="text-xs px-3 py-1.5 rounded-full bg-white/5 light:bg-light-bg border border-white/10 light:border-light-border text-gray-200 light:text-navy-soft transition-colors duration-300">
-                                            loop ♾️
-                                        </span>
                                     </div>
 
                                     {/* spotify iframe */}
                                     <div className="p-4">
-                                        <div className="rounded-xl overflow-hidden border border-white/10 light:border-light-border transition-colors duration-300">
+                                        <div className="rounded-xl overflow-hidden shadow-sm">
                                             <iframe
                                                 style={{ borderRadius: 12 }}
                                                 src={song.embedUrl}
@@ -282,26 +233,8 @@ const Hobbies = () => {
                                 </motion.div>
                             ))}
                         </div>
-
-                        {/* lil footer tag */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.7 }}
-                            className="relative mt-7 text-center"
-                        >
-                            <p className="text-gray-400 light:text-navy-muted text-sm transition-colors duration-300">
-                                Soundtrack of my life:{" "}
-                                <span className="text-white light:text-navy font-semibold transition-colors duration-300">Arijit</span> +{" "}
-                                <span className="text-purple font-semibold">coding</span> +{" "}
-                                <span className="text-green-300 font-semibold">late nights</span> 🌙
-                            </p>
-                        </motion.div>
                     </motion.div>
                 </div>
-
-
             </div>
         </section>
     );

@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaTwitter, FaMapMarkerAlt } from "react-icons/fa";
 
 const timelineItems = [
@@ -41,6 +42,14 @@ const itemVariants = {
 };
 
 const Contact = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end bottom"]
+  });
+
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
     <div
       id="contact"
@@ -67,14 +76,21 @@ const Contact = () => {
 
         {/* Timeline */}
         <motion.div
+          ref={containerRef}
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="relative max-w-lg mx-auto"
         >
-          {/* Vertical line */}
+          {/* Vertical line Background */}
           <div className="absolute left-6 top-0 bottom-0 w-px bg-purple/25 light:bg-purple/20" />
+
+          {/* Vertical line Animated Foreground (Orange) */}
+          <motion.div
+            className="absolute left-6 top-0 w-px bg-orange-500 z-0 origin-top shadow-[0_0_10px_rgba(249,115,22,0.8)]"
+            style={{ height: lineHeight }}
+          />
 
           {timelineItems.map((item) => (
             <motion.div
@@ -83,9 +99,12 @@ const Contact = () => {
               className="relative flex items-start gap-6 pb-10 last:pb-0"
             >
               {/* Icon dot */}
-              <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-dark-300 light:bg-light-card border-2 border-purple/50 flex items-center justify-center text-purple shadow-[0_0_12px_rgba(139,92,246,0.2)]">
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-dark-300 light:bg-light-card border-2 border-purple/50 flex items-center justify-center text-purple shadow-[0_0_12px_rgba(139,92,246,0.2)] bg-clip-padding transition-colors duration-300"
+              >
                 <item.icon className="text-lg" />
-              </div>
+              </motion.div>
 
               {/* Content */}
               <div className="flex-1 pt-2 pb-1 border-b border-white/5 light:border-light-border">
@@ -114,9 +133,12 @@ const Contact = () => {
             className="relative flex items-start gap-6 pt-10"
           >
             {/* Icon dot */}
-            <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-dark-300 light:bg-light-card border-2 border-purple/50 flex items-center justify-center text-purple shadow-[0_0_12px_rgba(139,92,246,0.2)]">
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-dark-300 light:bg-light-card border-2 border-purple/50 flex items-center justify-center text-purple shadow-[0_0_12px_rgba(139,92,246,0.2)]"
+            >
               <FaGithub className="text-lg" />
-            </div>
+            </motion.div>
 
             {/* Social links */}
             <div className="flex-1 pt-2">
