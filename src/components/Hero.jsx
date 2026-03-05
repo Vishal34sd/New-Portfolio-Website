@@ -110,21 +110,34 @@ const Hero = () => {
 
         <div className="w-full md:w-5/12 flex justify-center perspective-1000">
           <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple to-pink opacity-70 pointer-events-none"></div>
-
-            <motion.img
-              id="profile-pic"
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
+            <motion.div
               drag
-              dragSnapToOrigin={true}
+              dragSnapToOrigin={false}
               whileDrag={{ scale: 1.1, cursor: "grabbing" }}
-              className="relative rounded-full w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover z-50 cursor-grab"
-              src="/bio_pic_2.png"
-              alt="image-logo"
-              title="Drag me around!"
-            />
+              className="relative w-full h-full z-50 cursor-grab"
+            >
+              <img
+                id="profile-pic"
+                className="relative rounded-2xl w-full h-full object-cover pointer-events-none"
+                src="/profile_pic.jpg"
+                alt="image-logo"
+                title="Drag me around!"
+              />
+
+              {/* Online Status Animation */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-dark-300/80 light:bg-white/90 backdrop-blur-md border border-white/10 light:border-light-border px-4 py-2 rounded-full flex items-center gap-2 shadow-xl pointer-events-none"
+              >
+                <div className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </div>
+                <span className="text-sm font-semibold text-white light:text-navy whitespace-nowrap">Online</span>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>

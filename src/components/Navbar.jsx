@@ -27,27 +27,27 @@ const Navbar = () => {
             const light = stored === "light";
             setIsLight(light);
             document.documentElement.classList.toggle("light", light);
-        } catch {
-            // ignore
+        } catch (error) {
+            console.error("Failed to load theme preference:", error);
         }
     }, []);
 
     const toggleTheme = () => {
-        if (themeAnimating) return; // prevent spam
+        if (themeAnimating) return;
 
         setThemeAnimating(true);
         setIsLight((prev) => {
             const next = !prev;
             try {
                 localStorage.setItem("theme", next ? "light" : "dark");
-            } catch {
-                // ignore
+            } catch (error) {
+                console.error("Failed to save theme preference:", error);
             }
             document.documentElement.classList.toggle("light", next);
             return next;
         });
 
-        setTimeout(() => setThemeAnimating(false), 800); // Wait for transition to end before making normal again
+        setTimeout(() => setThemeAnimating(false), 800);
     };
 
     return (
@@ -80,8 +80,8 @@ const Navbar = () => {
                             className="text-2xl sm:text-3xl font-bold text-white light:text-navy flex items-center gap-1 transition-colors duration-300 outline-none focus:outline-none focus:ring-0"
                         >
                             <span>
-                                V
-                                <span className="text-purple">D</span>
+                                &lt; V
+                                <span className="text-purple">D /&gt;</span>
                             </span>
                             <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-purple rounded-full" />
                         </a>
@@ -112,8 +112,8 @@ const Navbar = () => {
                             onClick={toggleTheme}
                             aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
                             className={`inline-flex items-center justify-center w-10 h-10 rounded-xl border transition-colors  cursor-pointer duration-300 relative z-[100] ${isLight
-                                    ? "border-light-border bg-light-surface text-navy hover:bg-light-surface/70"
-                                    : "border-white/20 bg-white/10 text-white hover:bg-white/20"
+                                ? "border-light-border bg-light-surface text-navy hover:bg-light-surface/70"
+                                : "border-white/20 bg-white/10 text-white hover:bg-white/20"
                                 }`}
                         >
                             <motion.div
@@ -125,19 +125,22 @@ const Navbar = () => {
                             </motion.div>
                         </button>
 
-                        <div className="md:hidden">
+                        <button
+                            type="button"
+                            onClick={() => setShowMenu(!showMenu)}
+                            className="md:hidden relative z-[100] p-1"
+                            aria-label="Toggle menu"
+                        >
                             {showMenu ? (
                                 <FaXmark
                                     className="text-2xl cursor-pointer text-white light:text-navy transition-colors duration-300"
-                                    onClick={() => setShowMenu(!showMenu)}
                                 />
                             ) : (
                                 <FaBars
                                     className="text-2xl cursor-pointer text-white light:text-navy transition-colors duration-300"
-                                    onClick={() => setShowMenu(!showMenu)}
                                 />
                             )}
-                        </div>
+                        </button>
                     </div>
                 </div>
 

@@ -66,7 +66,7 @@ const ProjectDetails = () => {
                                 <h2 className="text-xl font-bold mb-4 border-b border-white/10 pb-2 light:border-light-border">Key Features</h2>
                                 <ul className="space-y-3">
                                     {project.features.map((feature, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-gray-800 light:text-slate-800">
+                                        <li key={i} className="flex items-start gap-3 text-white light:text-slate-800">
                                             <FaCheck className="text-purple mt-1 flex-shrink-0" />
                                             <span className="leading-relaxed font-medium">{feature}</span>
                                         </li>
