@@ -25,7 +25,7 @@ export const skills = [
       { name: "React", iconKey: "react" },
       { name: "JavaScript", iconKey: "js" },
       { name: "TypeScript", iconKey: "ts" },
-      { name: "Redux", iconKey: "redux" },
+      
       { name: "Tailwind CSS", iconKey: "tailwind" },
     ],
   },
