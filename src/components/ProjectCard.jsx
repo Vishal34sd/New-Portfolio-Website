@@ -27,7 +27,7 @@ const ProjectCard = ({
       hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.7)]
       transition-all duration-300"
         >
-            {/* Glow */}
+            
             <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
                 <div className="absolute -top-16 -left-16 h-52 w-52 rounded-full bg-purple/20 blur-3xl" />
                 <div className="absolute -bottom-20 -right-16 h-56 w-56 rounded-full bg-purple/10 blur-3xl" />

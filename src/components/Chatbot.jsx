@@ -88,7 +88,7 @@ const Chatbot = () => {
             <motion.button
                 onClick={() => setIsOpen(!isOpen)}
                 animate={{
-                    y: [0, -15, 0], // Jumping up and down
+                    y: [0, -15, 0], 
                     x: [0, -5, 5, 0], // Subtle side-to-side roaming
                     rotate: [0, -10, 10, 0] // Wiggle effect
                 }}

@@ -83,7 +83,7 @@ const Navbar = () => {
                                 &lt; V
                                 <span className="text-purple">D /&gt;</span>
                             </span>
-                            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-purple rounded-full" />
+                           
                         </a>
 
                         <Badge
