@@ -1,4 +1,5 @@
 import Hero from "../components/Hero"
+import EngineerProfile from "../components/EngineerProfile"
 import Skills from "../components/Skills"
 import Projects from "../components/Projects"
 import Contact from "../components/Contact"
@@ -7,20 +8,20 @@ import Hobbies from "../components/Hobbies"
 import GeetaQuote from "../components/GeetaQuote"
 
 
-const Home = ()=>{
-    return(
+const Home = () => {
+    return (
         <div className="overflow-x-hidden">
-            <Hero/>
-            
-            <Skills/>
-            <Projects/>
-            <GithubActivity/>
-            <Hobbies/>
-            <Contact/>
-            <GeetaQuote/>
+            <Hero />
+            <EngineerProfile />
+            <Skills />
+            <Projects />
+            <GithubActivity />
+            <Hobbies />
+            <Contact />
+            <GeetaQuote />
         </div>
     )
 }
 
 
-export default Home ;
+export default Home;

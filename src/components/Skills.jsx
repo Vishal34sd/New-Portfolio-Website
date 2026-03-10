@@ -32,7 +32,8 @@ const Skills = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl font-bold">
-            My <span className="text-purple">Skills</span>
+            <span className="text-white">My </span>
+            <span className="text-purple">Skills</span>
           </h2>
         </motion.div>
 

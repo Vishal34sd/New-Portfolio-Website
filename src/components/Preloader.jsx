@@ -28,12 +28,12 @@ const Preloader = () => {
 
     return (
         <motion.div
-            className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0a0a0a] overflow-hidden font-mono"
+            className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-dark-100 light:bg-light-bg overflow-hidden font-mono transition-colors duration-300"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
         >
             {/* Matrix-like falling code background effect (simplified) */}
-            <div className="absolute inset-0 opacity-10 flex flex-col justify-around text-green-500 text-xs pointer-events-none select-none">
+            <div className="absolute inset-0 opacity-10 flex flex-col justify-around text-purple light:text-blue-600 text-xs pointer-events-none select-none">
                 {[...Array(20)].map((_, i) => (
                     <motion.div
                         key={i}
@@ -51,47 +51,47 @@ const Preloader = () => {
                 {/* Futuristic Spinner */}
                 <div className="relative w-32 h-32 flex items-center justify-center mb-8">
                     <motion.div
-                        className="absolute inset-0 rounded-sm border-[1px] border-emerald-500/30"
+                        className="absolute inset-0 rounded-sm border-[1px] border-purple/30 light:border-blue-500/30"
                         animate={{ rotate: 360 }}
                         transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                     />
                     <motion.div
-                        className="absolute inset-2 border-[2px] border-t-emerald-400 border-r-transparent border-b-transparent border-l-transparent rounded-full"
+                        className="absolute inset-2 border-[2px] border-t-purple border-r-transparent border-b-transparent border-l-transparent rounded-full light:border-t-blue-500"
                         animate={{ rotate: -360 }}
                         transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                     />
                     <motion.div
-                        className="absolute inset-6 border-[2px] border-b-emerald-300 border-l-emerald-300 border-t-transparent border-r-transparent rounded-full"
+                        className="absolute inset-6 border-[2px] border-b-purple border-l-purple border-t-transparent border-r-transparent rounded-full light:border-b-blue-400 light:border-l-blue-400"
                         animate={{ rotate: 360 }}
                         transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                     />
 
                     {/* Core chip */}
                     <motion.div
-                        className="w-8 h-8 bg-emerald-950 border border-emerald-400 flex items-center justify-center shadow-[0_0_20px_rgba(52,211,153,0.5)]"
+                        className="w-8 h-8 bg-purple/20 light:bg-blue-100 border border-purple light:border-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(139,92,246,0.5)] light:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                         animate={{ scale: [1, 1.1, 1], opacity: [0.7, 1, 0.7] }}
                         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                     >
-                        <div className="w-2 h-2 bg-emerald-400" />
+                        <div className="w-2 h-2 bg-purple light:bg-blue-600" />
                     </motion.div>
                 </div>
 
                 {/* Typing Text */}
                 <div className="h-8 flex items-center justify-center">
-                    <span className="text-emerald-400 text-xl md:text-2xl font-bold tracking-widest drop-shadow-[0_0_8px_rgba(52,211,153,0.8)]">
+                    <span className="text-purple light:text-navy-soft text-xl md:text-2xl font-bold tracking-widest drop-shadow-[0_0_8px_rgba(139,92,246,0.8)] light:drop-shadow-none">
                         {text}
                         <motion.span
                             animate={{ opacity: [0, 1, 0] }}
                             transition={{ duration: 0.8, repeat: Infinity }}
-                            className="inline-block ml-1 w-3 h-6 bg-emerald-400 align-middle"
+                            className="inline-block ml-1 w-3 h-6 bg-purple light:bg-navy-soft align-middle"
                         />
                     </span>
                 </div>
 
                 {/* Loading Bar */}
-                <div className="w-64 h-1 bg-gray-900 mt-6 relative overflow-hidden ring-1 ring-emerald-900/50">
+                <div className="w-64 h-1 bg-dark-300 light:bg-gray-300 mt-6 relative overflow-hidden ring-1 ring-purple/20 light:ring-blue-200">
                     <motion.div
-                        className="absolute top-0 left-0 h-full bg-emerald-500 shadow-[0_0_10px_rgba(52,211,153,0.8)]"
+                        className="absolute top-0 left-0 h-full bg-purple light:bg-blue-500 shadow-[0_0_10px_rgba(139,92,246,0.8)] light:shadow-none"
                         initial={{ width: "0%" }}
                         animate={{ width: "100%" }}
                         transition={{ duration: 2.8, ease: "easeInOut" }}
@@ -99,7 +99,7 @@ const Preloader = () => {
                 </div>
 
                 <motion.div
-                    className="mt-2 text-emerald-500/50 text-xs tracking-widest uppercase"
+                    className="mt-2 text-purple/50 light:text-navy-muted text-xs tracking-widest uppercase"
                     animate={{ opacity: [0.3, 0.7, 0.3] }}
                     transition={{ duration: 2, repeat: Infinity }}
                 >

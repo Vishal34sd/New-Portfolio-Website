@@ -77,7 +77,7 @@ html {
 .typewriter-loop::before {
   content: "MERN Developer";
   color: #f8fafc;
-  animation: typingWords 12s infinite;
+  animation: typingWords 6s infinite;
 }
 
 .light .typewriter-loop::before {
